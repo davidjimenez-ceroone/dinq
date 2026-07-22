@@ -1,0 +1,249 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* DINQ brand tokens */
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-amber: var(--brand-amber);
+  --color-brand-calipso: var(--brand-calipso);
+  --color-brand-light: var(--brand-light);
+  --color-brand-dark-2: var(--brand-dark-2);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  color-scheme: light;
+  --radius: 0.75rem;
+
+  /* DINQ brand palette */
+  --brand-dark: #00272d;
+  --brand-dark-2: #013a43;
+  --brand-amber: #f8ad13;
+  --brand-calipso: #229cc1;
+  --brand-light: #f5f6f4;
+
+  --background: #ffffff;
+  --foreground: #00272d;
+
+  --card: #ffffff;
+  --card-foreground: #00272d;
+
+  --popover: #ffffff;
+  --popover-foreground: #00272d;
+
+  --primary: #f8ad13;
+  --primary-foreground: #00272d;
+
+  --secondary: #229cc1;
+  --secondary-foreground: #ffffff;
+
+  --muted: #f5f6f4;
+  --muted-foreground: #4a5c60;
+
+  --accent: #229cc1;
+  --accent-foreground: #ffffff;
+
+  --destructive: #c0392b;
+  --destructive-foreground: #ffffff;
+
+  --border: #e2e6e5;
+  --input: #d8dddc;
+  --ring: #229cc1;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  ::selection {
+    background-color: var(--brand-amber);
+    color: var(--brand-dark);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Reusable isotipo-inspired gradient (secondary graphic resource only) */
+  .dinq-gradient {
+    background-image: linear-gradient(120deg, var(--brand-amber), var(--brand-calipso));
+  }
+  .dinq-gradient-text {
+    background-image: linear-gradient(120deg, var(--brand-amber), var(--brand-calipso));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* Subtle entrance animation, disabled under reduced motion */
+@keyframes dinq-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dinq-animate-in {
+  animation: dinq-fade-up 0.6s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dinq-animate-in {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* WordPress article rich-content styles */
+.dinq-prose {
+  color: var(--foreground);
+  line-height: 1.7;
+  font-size: 1.0625rem;
+}
+.dinq-prose h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  scroll-margin-top: 6rem;
+  color: var(--brand-dark);
+}
+.dinq-prose h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  scroll-margin-top: 6rem;
+  color: var(--brand-dark);
+}
+.dinq-prose p {
+  margin-bottom: 1.25rem;
+}
+.dinq-prose ul,
+.dinq-prose ol {
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+}
+.dinq-prose ul {
+  list-style: disc;
+}
+.dinq-prose ol {
+  list-style: decimal;
+}
+.dinq-prose li {
+  margin-bottom: 0.5rem;
+}
+.dinq-prose a {
+  color: var(--brand-calipso);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.dinq-prose a:hover {
+  color: var(--brand-dark);
+}
+.dinq-prose blockquote {
+  border-left: 4px solid var(--brand-amber);
+  padding: 0.5rem 0 0.5rem 1.25rem;
+  margin: 1.75rem 0;
+  font-style: italic;
+  color: var(--muted-foreground);
+}
+.dinq-prose img {
+  border-radius: 0.75rem;
+  margin: 1.75rem 0;
+  height: auto;
+  max-width: 100%;
+}
+.dinq-prose figcaption {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 1.75rem;
+}
+.dinq-prose pre {
+  background: var(--brand-dark);
+  color: #f5f6f4;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  margin: 1.75rem 0;
+  font-size: 0.9rem;
+}
+.dinq-prose code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.9em;
+}
+.dinq-prose :not(pre) > code {
+  background: var(--muted);
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.35rem;
+}
+.dinq-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+  display: block;
+  overflow-x: auto;
+}
+.dinq-prose th,
+.dinq-prose td {
+  border: 1px solid var(--border);
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+}
+.dinq-prose th {
+  background: var(--muted);
+}
+.dinq-prose iframe {
+  max-width: 100%;
+  border-radius: 0.75rem;
+  margin: 1.75rem 0;
+}
