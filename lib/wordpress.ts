@@ -138,20 +138,68 @@ function mapPost(post: WPPost): Article {
   }
 }
 
-async function fetchFromBase(
+/**
+ * Result of a validated CMS request. `data` is only ever populated when the
+ * response was OK *and* was actually JSON, so callers never run JSON.parse /
+ * response.json() on an HTML error page.
+ */
+type WPFetchResult<T> = {
+  data: T | null
+  totalPages: number
+}
+
+/**
+ * Fetch a JSON endpoint from a WordPress base and safely parse it.
+ *
+ * Guarantees (so a broken/offline/misconfigured CMS never breaks the build):
+ *  - Any network error is caught and logged server-side only.
+ *  - `response.ok` is verified before reading the body.
+ *  - The `content-type` header must include `application/json`; if WordPress
+ *    returns HTML (e.g. a maintenance / login page) we bail out instead of
+ *    calling `response.json()`, which would throw `SyntaxError: Unexpected
+ *    token '<'`.
+ *  - `response.json()` itself is wrapped in try/catch as a final safety net.
+ */
+async function fetchJson<T>(
   base: string,
   path: string,
-): Promise<Response | null> {
+): Promise<WPFetchResult<T>> {
   try {
     const res = await fetch(`${base}${path}`, {
       next: { revalidate: REVALIDATE_SECONDS, tags: ['wordpress'] },
       headers: { Accept: 'application/json' },
     })
+
     if (!res.ok) {
       console.log('[v0] WordPress fetch non-OK:', res.status, base, path)
-      return null
+      return { data: null, totalPages: 0 }
     }
-    return res
+
+    const contentType = res.headers.get('content-type') ?? ''
+    if (!contentType.toLowerCase().includes('application/json')) {
+      console.log(
+        '[v0] WordPress returned non-JSON response:',
+        contentType || 'unknown',
+        base,
+        path,
+      )
+      return { data: null, totalPages: 0 }
+    }
+
+    const totalPages = Number(res.headers.get('X-WP-TotalPages') ?? '1') || 0
+
+    try {
+      const data = (await res.json()) as T
+      return { data, totalPages }
+    } catch (error) {
+      console.log(
+        '[v0] WordPress JSON parse failed:',
+        (error as Error).message,
+        base,
+        path,
+      )
+      return { data: null, totalPages: 0 }
+    }
   } catch (error) {
     console.log(
       '[v0] WordPress fetch failed:',
@@ -159,7 +207,7 @@ async function fetchFromBase(
       base,
       path,
     )
-    return null
+    return { data: null, totalPages: 0 }
   }
 }
 
@@ -172,21 +220,14 @@ async function fetchList(path: string): Promise<{
   posts: WPPost[]
   totalPages: number
 }> {
-  let lastEmpty: { posts: WPPost[]; totalPages: number } = {
-    posts: [],
-    totalPages: 0,
-  }
-
   for (const base of WP_BASES) {
-    const res = await fetchFromBase(base, path)
-    if (!res) continue
-    const totalPages = Number(res.headers.get('X-WP-TotalPages') ?? '1')
-    const posts = (await res.json()) as WPPost[]
-    if (posts.length > 0) return { posts, totalPages }
-    lastEmpty = { posts: [], totalPages: 0 }
+    const { data, totalPages } = await fetchJson<WPPost[]>(base, path)
+    if (Array.isArray(data) && data.length > 0) {
+      return { posts: data, totalPages }
+    }
   }
 
-  return lastEmpty
+  return { posts: [], totalPages: 0 }
 }
 
 export async function getArticles(
@@ -200,23 +241,26 @@ export async function getArticles(
 
 export async function getArticleSlugs(): Promise<string[]> {
   for (const base of WP_BASES) {
-    const res = await fetchFromBase(base, '/posts?per_page=100&_fields=slug')
-    if (!res) continue
-    const posts = (await res.json()) as { slug: string }[]
-    if (posts.length > 0) return posts.map((p) => p.slug)
+    const { data } = await fetchJson<{ slug: string }[]>(
+      base,
+      '/posts?per_page=100&_fields=slug',
+    )
+    if (Array.isArray(data) && data.length > 0) {
+      return data.map((p) => p.slug)
+    }
   }
   return []
 }
 
 export async function getArticleBySlug(slug: string): Promise<Article | null> {
   for (const base of WP_BASES) {
-    const res = await fetchFromBase(
+    const { data } = await fetchJson<WPPost[]>(
       base,
       `/posts?_embed=1&slug=${encodeURIComponent(slug)}`,
     )
-    if (!res) continue
-    const posts = (await res.json()) as WPPost[]
-    if (posts.length) return mapPost(posts[0])
+    if (Array.isArray(data) && data.length > 0) {
+      return mapPost(data[0])
+    }
   }
   return null
 }
