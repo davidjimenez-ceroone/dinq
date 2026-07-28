@@ -1,11 +1,12 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 
 /**
- * DINQ wordmark.
- * NOTE: [PENDIENTE DE IMPORTAR DEL SITIO ACTUAL] — sustituir por los archivos
- * oficiales del logotipo cuando estén disponibles. Este wordmark es un
- * marcador de posición basado en la tipografía corporativa (Poppins).
+ * DINQ wordmark — official brand logotype.
+ * The PNG has a transparent background and the orange mark reads well on both
+ * light (header) and dark (footer) surfaces, so a single asset serves both
+ * variants. The `variant` prop is kept for API compatibility.
  */
 export function Logo({
   variant = 'dark',
@@ -14,49 +15,37 @@ export function Logo({
   variant?: 'dark' | 'light'
   className?: string
 }) {
-  const textColor = variant === 'light' ? 'text-white' : 'text-brand-dark'
   return (
     <Link
       href="/"
       aria-label="DINQ — Inicio"
-      className={cn('inline-flex items-center gap-2', className)}
+      className={cn('inline-flex items-center', className)}
+      data-variant={variant}
     >
-      <span aria-hidden="true" className="inline-flex h-8 w-8 items-center justify-center">
-        <IsotypeMark className="h-8 w-8" />
-      </span>
-      <span className={cn('text-2xl font-bold tracking-tight', textColor)}>
-        DINQ
-      </span>
+      <Image
+        src="/logo-dinq.png"
+        alt="DINQ"
+        width={287}
+        height={68}
+        priority
+        className="h-8 w-auto"
+      />
     </Link>
   )
 }
 
 /**
- * Isotype-inspired mark: interlocking curves that echo evolution and
- * connection. Used as the placeholder brand symbol.
+ * DINQ isotype — official brand symbol.
  */
 export function IsotypeMark({ className }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 48 48"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+    <Image
+      src="/isotipo-dinq.png"
+      alt=""
       aria-hidden="true"
-    >
-      <path
-        d="M8 24c0-8.837 7.163-16 16-16 8.837 0 16 7.163 16 16"
-        stroke="#229CC1"
-        strokeWidth="4"
-        strokeLinecap="round"
-      />
-      <path
-        d="M40 24c0 8.837-7.163 16-16 16-8.837 0-16-7.163-16-16"
-        stroke="#F8AD13"
-        strokeWidth="4"
-        strokeLinecap="round"
-      />
-      <circle cx="24" cy="24" r="4" fill="#00272D" />
-    </svg>
+      width={146}
+      height={122}
+      className={cn('h-8 w-auto', className)}
+    />
   )
 }
