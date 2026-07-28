@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Mail, Clock, MessageSquare } from 'lucide-react'
 import { PageHero } from '@/components/layout/page-hero'
 import { Reveal } from '@/components/ui/reveal'
-import { ContactForm } from '@/components/sections/contact-form'
+import { AppointmentScheduler } from '@/components/sections/appointment-scheduler'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { pageSeo, routes, siteConfig } from '@/content/seo'
 import { contactContent } from '@/content/contact'
@@ -91,7 +91,7 @@ export default function ContactPage() {
 
           <Reveal delay={120}>
             <div className="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
-              <ContactForm />
+              <AppointmentScheduler />
             </div>
           </Reveal>
         </div>

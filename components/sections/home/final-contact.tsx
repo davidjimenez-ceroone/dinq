@@ -1,6 +1,6 @@
 import { Section } from '@/components/ui/section'
 import { Reveal } from '@/components/ui/reveal'
-import { ContactForm } from '@/components/sections/contact-form'
+import { AppointmentScheduler } from '@/components/sections/appointment-scheduler'
 import { contactCta } from '@/content/home'
 
 export function FinalContact() {
@@ -18,7 +18,7 @@ export function FinalContact() {
           </div>
         </Reveal>
         <Reveal delay={120}>
-          <ContactForm />
+          <AppointmentScheduler />
         </Reveal>
       </div>
     </Section>
