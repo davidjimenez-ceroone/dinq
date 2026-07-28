@@ -6,9 +6,9 @@ import { contactCta } from '@/content/home'
 export function FinalContact() {
   return (
     <Section id="contacto" className="bg-muted/40">
-      <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
+      <div className="mx-auto flex max-w-3xl flex-col gap-10">
         <Reveal>
-          <div className="lg:sticky lg:top-28">
+          <div className="text-center">
             <h2 className="text-balance text-2xl font-semibold text-foreground sm:text-3xl lg:text-4xl">
               {contactCta.title}
             </h2>
