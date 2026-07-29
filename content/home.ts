@@ -10,7 +10,7 @@ export const hero = {
   title: 'Inteligencia Artificial para la transformación empresarial',
   description:
     'Impulsamos la evolución empresarial mediante soluciones de inteligencia artificial de vanguardia. Nos especializamos en desarrollar estrategias personalizadas que optimizan tus operaciones, mejoran la toma de decisiones y te conectan de manera más efectiva con tus clientes.',
-  primaryCta: { label: 'Comenzar', href: routes.contact },
+  primaryCta: { label: 'Comenzar', href: routes.about },
   secondaryCta: { label: 'Contáctanos', href: routes.contact },
 }
 
