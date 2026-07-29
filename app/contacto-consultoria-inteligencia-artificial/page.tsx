@@ -52,14 +52,14 @@ export default function ContactPage() {
         breadcrumb={[{ label: 'Inicio', href: routes.home }, { label: 'Contacto' }]}
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
+      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <div className="flex flex-col gap-12">
           <Reveal>
-            <div className="lg:sticky lg:top-28">
+            <div>
               <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
                 {contactContent.description}
               </p>
-              <ul className="mt-10 space-y-6">
+              <ul className="mt-10 grid gap-6 sm:grid-cols-3">
                 {helpItems.map((item) => {
                   const Icon = item.icon
                   return (
@@ -90,9 +90,7 @@ export default function ContactPage() {
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
-              <AppointmentScheduler />
-            </div>
+            <AppointmentScheduler />
           </Reveal>
         </div>
       </section>
