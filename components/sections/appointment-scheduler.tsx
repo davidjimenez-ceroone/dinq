@@ -1,5 +1,5 @@
 const CALENDAR_URL =
-  'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3CT-VvTPOuUBTKv85Gews3Rje1I2erh6Hp1dPlWCOkadXxW8QHUVKxf3OTMsmqXPmDPuUPVQLY?gv=true'
+  'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3CT-VvTPOuUBTKv85Gews3Rje1I2erh6Hp1dPlWCOkadXxW8QHUVKxf3OTMsmqXPmDPuUPVQLY?gv=true&hl=es'
 
 // The Google appointment iframe renders a profile photo + name at the very
 // top. We clip only that portion so the embed starts at the "Citas de 30 min"
