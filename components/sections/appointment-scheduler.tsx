@@ -4,7 +4,7 @@ const CALENDAR_URL =
 // The Google appointment iframe renders a profile photo + name at the very
 // top. We clip only that portion so the embed starts at the "Citas de 30 min"
 // header, keeping the Google Meet note and the description visible.
-const CROP_TOP = 92
+const CROP_TOP = 82
 
 export function AppointmentScheduler() {
   return (
