@@ -24,7 +24,9 @@ export type Tool = { name: string; slug?: string }
 export type ToolCategory = { title: string; tools: Tool[] }
 
 export const toolsSection = {
-  title: 'Nuestras Herramientas',
+  title: 'Las mejores herramientas. Una estrategia.',
+  description:
+    'No dependemos de una única plataforma. Seleccionamos y combinamos las tecnologías de IA que mejor encajan con cada proyecto, proceso y objetivo.',
   categories: [
     {
       title: 'Modelos fundacionales / Chat',
