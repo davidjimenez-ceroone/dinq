@@ -9,7 +9,7 @@ function logoUrl(slug: string) {
 
 function ToolChip({ tool }: { tool: Tool }) {
   return (
-    <li className="flex items-center gap-2.5 rounded-full border border-border bg-card px-4 py-2 transition-colors hover:border-primary/50">
+    <li className="flex items-center gap-2.5 rounded-full border border-border bg-background px-3.5 py-1.5 transition-colors hover:border-primary/50">
       {tool.slug ? (
         <Image
           src={logoUrl(tool.slug) || '/placeholder.svg'}
@@ -41,19 +41,23 @@ export function Tools() {
         </h2>
       </Reveal>
 
-      <div className="mx-auto mt-12 max-w-5xl space-y-10">
+      <div className="mx-auto mt-12 grid max-w-6xl auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {toolsSection.categories.map((category, index) => (
-          <Reveal key={category.title} delay={index * 60}>
-            <div>
-              <h3 className="text-center text-xs font-semibold uppercase tracking-wider text-primary">
+          <Reveal key={category.title} delay={index * 60} className="h-full">
+            <article className="flex h-full flex-col rounded-3xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
+              <h3 className="flex items-center gap-2 text-sm font-semibold text-brand-dark">
+                <span
+                  aria-hidden="true"
+                  className="h-4 w-1 rounded-full bg-primary"
+                />
                 {category.title}
               </h3>
-              <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-3">
+              <ul className="mt-5 flex flex-wrap gap-2.5">
                 {category.tools.map((tool) => (
                   <ToolChip key={`${category.title}-${tool.name}`} tool={tool} />
                 ))}
               </ul>
-            </div>
+            </article>
           </Reveal>
         ))}
       </div>
