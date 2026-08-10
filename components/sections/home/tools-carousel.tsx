@@ -35,18 +35,31 @@ function ToolChip({ tool }: { tool: Tool }) {
   )
 }
 
+const MAX_VISIBLE = 6
+
 function CategoryCard({
   category,
   position,
+  expanded,
+  onToggle,
 }: {
   category: ToolCategory
   position: 'center' | 'side' | 'hidden'
+  expanded: boolean
+  onToggle: () => void
 }) {
+  const isCenter = position === 'center'
+  const total = category.tools.length
+  const hasMore = total > MAX_VISIBLE
+  const visibleTools =
+    hasMore && !expanded ? category.tools.slice(0, MAX_VISIBLE) : category.tools
+  const hiddenCount = total - MAX_VISIBLE
+
   return (
     <article
       className={cn(
         'flex h-full flex-col rounded-3xl border bg-card p-6 transition-[box-shadow,border-color] duration-500',
-        position === 'center'
+        isCenter
           ? 'border-primary/40 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.25)] ring-1 ring-primary/20'
           : 'border-border shadow-sm',
       )}
@@ -56,10 +69,20 @@ function CategoryCard({
         {category.title}
       </h3>
       <ul className="mt-5 flex flex-wrap gap-2.5">
-        {category.tools.map((tool) => (
+        {visibleTools.map((tool) => (
           <ToolChip key={`${category.title}-${tool.name}`} tool={tool} />
         ))}
       </ul>
+      {hasMore ? (
+        <button
+          type="button"
+          onClick={onToggle}
+          tabIndex={isCenter ? 0 : -1}
+          className="mt-auto self-start pt-4 text-sm font-semibold text-primary transition-colors hover:text-primary/70"
+        >
+          {expanded ? 'Ver menos' : `Ver +${hiddenCount}`}
+        </button>
+      ) : null}
     </article>
   )
 }
@@ -80,6 +103,7 @@ export function ToolsCarousel() {
   const [dragOffset, setDragOffset] = useState(0)
   const [withTransition, setWithTransition] = useState(true)
   const [paused, setPaused] = useState(false)
+  const [expanded, setExpanded] = useState(false)
 
   const dragState = useRef<{ startX: number; dragging: boolean; moved: boolean }>(
     { startX: 0, dragging: false, moved: false },
@@ -100,8 +124,11 @@ export function ToolsCarousel() {
     return () => ro.disconnect()
   }, [])
 
-  // Measure each card's natural height so the container can follow the
-  // centered card (transform: scale does not affect these layout values).
+  const centerIndex = ((active % n) + n) % n
+
+  // Measure each card's rendered height. Collapsed cards report a uniform
+  // height; the expanded center card reports its taller natural height.
+  // (transform: scale does not affect these layout values.)
   useLayoutEffect(() => {
     const next = cardRefs.current.map((r) => r?.offsetHeight ?? 0)
     setHeights((prev) =>
@@ -109,25 +136,35 @@ export function ToolsCarousel() {
         ? prev
         : next,
     )
-  }, [containerWidth])
+  }, [containerWidth, expanded, active, cardWidth])
 
-  const centerIndex = ((active % n) + n) % n
-  const containerHeight = heights[centerIndex] ?? 0
+  // Uniform height for every collapsed card (tallest collapsed card wins),
+  // so all cards look the same size until the center one is expanded.
+  const collapsedMax = Math.max(
+    0,
+    ...heights.filter((_, i) => !(i === centerIndex && expanded)),
+  )
+  const containerHeight = expanded ? heights[centerIndex] ?? collapsedMax : collapsedMax
 
   const go = useCallback((dir: number) => {
     setWithTransition(true)
     setActive((a) => a + dir)
   }, [])
 
-  // Autoplay, paused on hover/drag.
+  // Collapse the expanded card whenever the centered card changes.
   useEffect(() => {
-    if (paused) return
+    setExpanded(false)
+  }, [centerIndex])
+
+  // Autoplay, paused on hover/drag/expand.
+  useEffect(() => {
+    if (paused || expanded) return
     const id = window.setInterval(() => {
       setWithTransition(true)
       setActive((a) => a + 1)
     }, AUTOPLAY_MS)
     return () => window.clearInterval(id)
-  }, [paused])
+  }, [paused, expanded])
 
   // Shortest signed circular distance from the active index to card i.
   const relOffset = (i: number) => {
@@ -193,6 +230,10 @@ export function ToolsCarousel() {
           const visible = Math.abs(rel) <= 1
           const x = rel * step + dragOffset
           const isCenter = rel === 0
+          const cardIsExpanded = isCenter && expanded
+          const wrapperHeight = cardIsExpanded
+            ? undefined
+            : collapsedMax || undefined
           return (
             <div
               key={category.title}
@@ -207,6 +248,7 @@ export function ToolsCarousel() {
               )}
               style={{
                 width: cardWidth,
+                height: wrapperHeight,
                 transform: `translateX(-50%) translateX(${x}px) scale(${
                   isCenter ? 1 : 0.94
                 })`,
@@ -219,6 +261,8 @@ export function ToolsCarousel() {
               <CategoryCard
                 category={category}
                 position={isCenter ? 'center' : visible ? 'side' : 'hidden'}
+                expanded={cardIsExpanded}
+                onToggle={() => isCenter && setExpanded((e) => !e)}
               />
             </div>
           )
