@@ -14,25 +14,136 @@ export const hero = {
   secondaryCta: { label: 'Contáctanos', href: routes.contact },
 }
 
+/**
+ * Tool ecosystem. Each tool optionally carries a `slug` that maps to a brand
+ * logo hosted by theSVG (https://thesvg.org). Tools without a `slug` fall back
+ * to a text chip. Presented as a technological ecosystem — not official
+ * partners. Brand marks belong to their respective owners.
+ */
+export type Tool = { name: string; slug?: string }
+export type ToolCategory = { title: string; tools: Tool[] }
+
 export const toolsSection = {
   title: 'Nuestras Herramientas',
-  // Presented as tools / technological ecosystem — not official partners.
-  tools: [
-    'Adobe Firefly',
-    'Amazon SageMaker',
-    'ChatGPT',
-    'Claude',
-    'DeepSeek',
-    'Gemini',
-    'Midjourney',
-    'Amazon Bedrock',
-    'Grok',
-    'Llama',
-    'PaLM',
-    'Perplexity',
-    'watsonx.ai',
-    'Manus',
-  ],
+  categories: [
+    {
+      title: 'Modelos fundacionales / Chat',
+      tools: [
+        { name: 'ChatGPT', slug: 'openai-chatgpt' },
+        { name: 'Claude', slug: 'claude' },
+        { name: 'Gemini', slug: 'gemini' },
+        { name: 'Grok', slug: 'grok' },
+        { name: 'DeepSeek', slug: 'deepseek' },
+        { name: 'Llama' },
+        { name: 'Mistral', slug: 'mistral' },
+        { name: 'Qwen', slug: 'qwen' },
+        { name: 'Kimi AI', slug: 'kimi' },
+        { name: 'Perplexity', slug: 'perplexity' },
+      ],
+    },
+    {
+      title: 'Plataformas cloud / enterprise AI',
+      tools: [
+        { name: 'Amazon Bedrock', slug: 'aws-amazon-bedrock' },
+        { name: 'Amazon SageMaker', slug: 'aws-amazon-sagemaker' },
+        { name: 'watsonx.ai' },
+        { name: 'Microsoft Azure AI Foundry', slug: 'azure' },
+        { name: 'Google Vertex AI', slug: 'gcp-vertexai' },
+        { name: 'Microsoft 365 Copilot', slug: 'microsoft-365-copilot' },
+      ],
+    },
+    {
+      title: 'Zoho AI Suite',
+      tools: [
+        { name: 'Zia / Zia Agent Studio', slug: 'zoho' },
+        { name: 'Zoho Creator IA', slug: 'zoho' },
+      ],
+    },
+    {
+      title: 'Generación de imagen',
+      tools: [
+        { name: 'Adobe Firefly', slug: 'firefly-adobe' },
+        { name: 'Midjourney', slug: 'midjourney' },
+        { name: 'Ideogram', slug: 'ideogram' },
+        { name: 'FLUX', slug: 'flux-black-forest-labs' },
+        { name: 'Stable Diffusion', slug: 'stability-stablediffusion' },
+        { name: 'Leonardo AI' },
+        { name: 'Krea', slug: 'krea' },
+      ],
+    },
+    {
+      title: 'Vídeo generativo',
+      tools: [
+        { name: 'Runway', slug: 'runway' },
+        { name: 'Synthesia' },
+        { name: 'HeyGen' },
+        { name: 'Colossyan' },
+      ],
+    },
+    {
+      title: 'Voz / Audio',
+      tools: [
+        { name: 'ElevenLabs', slug: 'elevenlabs' },
+        { name: 'Fish Audio', slug: 'fish-audio' },
+        { name: 'Suno', slug: 'suno' },
+        { name: 'Retell AI' },
+      ],
+    },
+    {
+      title: 'Coding assistants',
+      tools: [
+        { name: 'GitHub Copilot', slug: 'github-copilot' },
+        { name: 'Cursor', slug: 'cursor' },
+        { name: 'Claude Code', slug: 'claude-code' },
+        { name: 'Codex', slug: 'codex-openai' },
+        { name: 'Antigravity', slug: 'antigravity-google' },
+        { name: 'Replit', slug: 'replit' },
+        { name: 'v0', slug: 'v0' },
+      ],
+    },
+    {
+      title: 'Agentes autónomos / agentic AI',
+      tools: [
+        { name: 'Manus', slug: 'manus' },
+        { name: 'Devin' },
+        { name: 'Salesforce Agentforce', slug: 'salesforce' },
+        { name: 'OpenAI Agents SDK', slug: 'openai' },
+        { name: 'n8n', slug: 'n8n' },
+        { name: 'LangChain', slug: 'langchain' },
+        { name: 'Composio', slug: 'composio' },
+      ],
+    },
+    {
+      title: 'Sistemas agénticos / Orquestación',
+      tools: [
+        { name: 'VibeTasking' },
+        { name: 'Lindy' },
+        { name: 'Relevance AI' },
+        { name: 'Dify AI', slug: 'dify' },
+        { name: 'Langflow', slug: 'langflow' },
+        { name: 'Flowise' },
+        { name: 'CrewAI', slug: 'crewai' },
+        { name: 'Taskade' },
+        { name: 'Activepieces' },
+        { name: 'browser-use' },
+        { name: 'Skyvern' },
+        { name: 'Nango' },
+        { name: 'Factory' },
+        { name: 'Julius' },
+        { name: 'OpenClaw' },
+      ],
+    },
+    {
+      title: 'Notetaking / Transcripción + Investigación',
+      tools: [
+        { name: 'Plaud' },
+        { name: 'Otter.ai' },
+        { name: 'Granola', slug: 'granola' },
+        { name: 'NotebookLM', slug: 'notebooklm' },
+        { name: 'Aragón' },
+      ],
+    },
+  ] satisfies ToolCategory[],
 }
 
 export const aboutTeaser = {
