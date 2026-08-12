@@ -10,32 +10,36 @@ function logoUrl(slug: string) {
   return `https://thesvg.org/icons/${slug}/default.svg`
 }
 
-function ToolChip({ tool }: { tool: Tool }) {
+function ToolRow({ tool }: { tool: Tool }) {
   return (
-    <li className="flex items-center gap-2.5 rounded-full border border-border bg-background px-3.5 py-1.5 transition-colors">
+    <li className="flex items-center gap-3">
       {tool.slug ? (
-        <Image
-          src={logoUrl(tool.slug) || '/placeholder.svg'}
-          alt={`Logotipo de ${tool.name}`}
-          width={20}
-          height={20}
-          className="h-5 w-5 shrink-0 object-contain"
-          unoptimized
-        />
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-background">
+          <Image
+            src={logoUrl(tool.slug) || '/placeholder.svg'}
+            alt={`Logotipo de ${tool.name}`}
+            width={18}
+            height={18}
+            className="h-[18px] w-[18px] object-contain"
+            unoptimized
+          />
+        </span>
       ) : (
         <span
           aria-hidden="true"
-          className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-[11px] font-semibold text-primary"
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-xs font-semibold text-primary"
         >
           {tool.name.charAt(0)}
         </span>
       )}
-      <span className="text-sm font-medium text-foreground/80">{tool.name}</span>
+      <span className="truncate text-sm font-medium text-foreground/80">
+        {tool.name}
+      </span>
     </li>
   )
 }
 
-const MAX_VISIBLE = 6
+const MAX_VISIBLE = 5
 
 function CategoryCard({
   category,
@@ -58,19 +62,19 @@ function CategoryCard({
   return (
     <article
       className={cn(
-        'flex h-full flex-col rounded-3xl border bg-card p-6 transition-[box-shadow,border-color] duration-500',
+        'flex h-full flex-col rounded-3xl border bg-card p-5 transition-[box-shadow,border-color] duration-500',
         isCenter
           ? 'border-primary/40 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.25)] ring-1 ring-primary/20'
           : 'border-border shadow-sm',
       )}
     >
-      <h3 className="flex items-center gap-2 text-base font-semibold text-brand-dark">
-        <span aria-hidden="true" className="h-4 w-1 rounded-full bg-primary" />
+      <h3 className="flex items-center gap-2 text-[15px] font-semibold text-brand-dark">
+        <span aria-hidden="true" className="h-4 w-1 shrink-0 rounded-full bg-primary" />
         {category.title}
       </h3>
-      <ul className="mt-5 flex flex-wrap gap-2.5">
+      <ul className="mt-4 flex flex-col gap-2.5">
         {visibleTools.map((tool) => (
-          <ToolChip key={`${category.title}-${tool.name}`} tool={tool} />
+          <ToolRow key={`${category.title}-${tool.name}`} tool={tool} />
         ))}
       </ul>
       {hasMore ? (
@@ -78,7 +82,7 @@ function CategoryCard({
           type="button"
           onClick={onToggle}
           tabIndex={isCenter ? 0 : -1}
-          className="mt-auto self-start pt-4 text-sm font-semibold text-primary transition-colors hover:text-primary/70"
+          className="mt-4 self-start text-sm font-semibold text-primary transition-colors hover:text-primary/70"
         >
           {expanded ? 'Ver menos' : `Ver +${hiddenCount}`}
         </button>
