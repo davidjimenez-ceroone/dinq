@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Section } from '@/components/ui/section'
 import { Reveal } from '@/components/ui/reveal'
 import { CtaButton } from '@/components/brand/cta-button'
@@ -33,15 +34,14 @@ export function HelpBanner() {
 
 function SubvfyLogo() {
   return (
-    <div className="flex items-center gap-3">
-      <span aria-hidden="true" className="flex items-end gap-1">
-        <span className="block h-6 w-2 -skew-x-12 rounded-[2px] bg-brand-amber" />
-        <span className="block h-6 w-2 -skew-x-12 rounded-[2px] bg-brand-calipso" />
-      </span>
-      <span className="text-2xl font-bold tracking-tight text-white">
-        {financing.brand}
-      </span>
-    </div>
+    <Image
+      src="/subvfy-logo-white.png"
+      alt="Logotipo de Subvfy"
+      width={714}
+      height={124}
+      className="h-9 w-auto"
+      priority={false}
+    />
   )
 }
 
