@@ -295,20 +295,20 @@ export const benefits = {
     'Impulsa tu negocio con inteligencia. En Dinq, combinamos IA y estrategia para que tu marca avance con decisión en el mundo digital. Innovación, eficiencia y visión: eso es navegar con nosotros.',
   cards: [
     {
-      title: 'Comunicación oportuna y transparente',
+      title: 'Automatización de procesos',
       description:
-        'La confianza se construye con cada mensaje. En Dinq, potenciamos la claridad y la rapidez en cada interacción, fortaleciendo relaciones y generando valor en tiempo real.',
+        'Reduce tareas manuales y repetitivas mediante soluciones inteligentes que agilizan el trabajo diario, minimizan errores y permiten que tu equipo se concentre en actividades de mayor valor.',
     },
     {
-      title: 'Aumentar el rendimiento',
+      title: 'Mayor eficiencia y productividad',
       description:
-        'Estrategia inteligente, resultados reales. En Dinq, usamos IA para atraer a los clientes correctos y convertir visitas en ventas.',
+        'Optimiza el rendimiento de tus equipos y procesos con herramientas de inteligencia artificial que permiten trabajar de forma más rápida, precisa y organizada.',
       stat: { value: '4.7+', label: 'Empresas que usan la IA' },
     },
     {
-      title: 'Soluciones económicas sencillas',
+      title: 'Reducción de costes operativos',
       description:
-        'Con la Inteligencia Artificial ayudamos a simplificar los procesos financieros complejos',
+        'Simplifica procesos complejos, aprovecha mejor tus recursos y reduce costes mediante soluciones escalables diseñadas según las necesidades de tu empresa.',
     },
   ],
 }
