@@ -277,10 +277,16 @@ export const howWeWork = {
 }
 
 export const financing = {
+  brand: 'subvfy',
   title: 'Financiación inteligente para tu evolución digital.',
-  description:
-    'La tecnología de Subvfy permite a cualquier entidad o despacho profesional filtrar las mejores oportunidades de financiación para proyectos de IA y digitalización mediante el análisis de datos.Accede a la base de datos de subvenciones del grupo Bigtoone.',
-  cta: { label: 'Buscador de ayudas', href: 'https://bigto.one' },
+  paragraphs: [
+    'La tecnología de Subvfy permite a cualquier entidad o despacho profesional filtrar las mejores oportunidades de financiación para proyectos de IA y digitalización mediante el análisis de datos.',
+    'Accede a la base de datos de subvenciones del grupo Bigtoone.',
+  ],
+  cta: {
+    label: 'Buscador de ayudas',
+    href: 'https://subvfy.app.fandit.es/auth/login',
+  },
 }
 
 export const benefits = {

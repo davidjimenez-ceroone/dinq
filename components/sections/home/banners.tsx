@@ -31,34 +31,53 @@ export function HelpBanner() {
   )
 }
 
+function SubvfyLogo() {
+  return (
+    <div className="flex items-center gap-3">
+      <span aria-hidden="true" className="flex items-end gap-1">
+        <span className="block h-6 w-2 -skew-x-12 rounded-[2px] bg-brand-amber" />
+        <span className="block h-6 w-2 -skew-x-12 rounded-[2px] bg-brand-calipso" />
+      </span>
+      <span className="text-2xl font-bold tracking-tight text-white">
+        {financing.brand}
+      </span>
+    </div>
+  )
+}
+
 export function Financing() {
   return (
     <Section className="bg-muted/40">
-      <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-        <Reveal>
-          <div>
-            <h2 className="text-balance text-2xl font-semibold text-foreground sm:text-3xl">
-              {financing.title}
-            </h2>
-            <p className="mt-5 text-pretty leading-relaxed text-muted-foreground">
-              {financing.description}
-            </p>
-            <CtaButton
-              href={financing.cta.href}
-              variant="outline"
-              className="mt-8"
-              external
-            >
-              {financing.cta.label}
-            </CtaButton>
+      <Reveal>
+        <div className="rounded-3xl bg-brand-dark px-8 py-12 sm:px-12 lg:px-16 lg:py-14">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+            <div>
+              <SubvfyLogo />
+              <h2 className="mt-8 text-balance text-3xl font-bold leading-tight text-white sm:text-4xl">
+                {financing.title}
+              </h2>
+            </div>
+            <div>
+              {financing.paragraphs.map((paragraph) => (
+                <p
+                  key={paragraph}
+                  className="mb-4 text-pretty leading-relaxed text-white/80"
+                >
+                  {paragraph}
+                </p>
+              ))}
+              <CtaButton
+                href={financing.cta.href}
+                variant="primary"
+                className="mt-4"
+                external
+              >
+                {financing.cta.label}
+              </CtaButton>
+            </div>
           </div>
-        </Reveal>
-        <Reveal delay={120}>
-          <div className="rounded-3xl border border-border bg-card p-10">
-            <CurveFlow className="h-40 w-full" />
-          </div>
-        </Reveal>
-      </div>
+        </div>
+      </Reveal>
     </Section>
   )
 }
