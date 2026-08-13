@@ -41,7 +41,7 @@ export function NeuralSphere({ className }: { className?: string }) {
         x: Math.cos(theta) * radius,
         y,
         z: Math.sin(theta) * radius,
-        amber: Math.random() < 0.16,
+        amber: Math.random() < 0.22,
         pulse: Math.random() * Math.PI * 2,
       })
     }
@@ -117,8 +117,8 @@ export function NeuralSphere({ className }: { className?: string }) {
         const a = proj[edges[e][0]]
         const b = proj[edges[e][1]]
         const depth = (a.depth + b.depth) / 2
-        ctx.strokeStyle = `rgba(${BRAND.line}, ${0.06 + depth * 0.32})`
-        ctx.lineWidth = 0.7
+        ctx.strokeStyle = `rgba(${BRAND.line}, ${0.12 + depth * 0.5})`
+        ctx.lineWidth = 0.8
         ctx.beginPath()
         ctx.moveTo(a.sx, a.sy)
         ctx.lineTo(b.sx, b.sy)
@@ -132,16 +132,18 @@ export function NeuralSphere({ className }: { className?: string }) {
         const twinkle = reduceMotion
           ? 1
           : 0.75 + 0.25 * Math.sin(t * 0.002 + n.pulse)
-        const r = (n.amber ? 1.7 : 1.1) * (0.5 + p.depth) * twinkle
+        const r = (n.amber ? 2 : 1.35) * (0.55 + p.depth) * twinkle
 
         if (n.amber) {
-          const alpha = (0.55 + p.depth * 0.45) * twinkle
-          ctx.shadowBlur = 12 * p.depth
+          const alpha = (0.7 + p.depth * 0.3) * twinkle
+          ctx.shadowBlur = 16 * p.depth
           ctx.shadowColor = `rgba(${BRAND.amber}, ${alpha})`
           ctx.fillStyle = `rgba(${BRAND.amber}, ${alpha})`
         } else {
-          ctx.shadowBlur = 0
-          ctx.fillStyle = `rgba(${BRAND.calipso}, ${0.3 + p.depth * 0.55})`
+          const alpha = 0.45 + p.depth * 0.5
+          ctx.shadowBlur = 6 * p.depth
+          ctx.shadowColor = `rgba(${BRAND.calipso}, ${alpha * 0.7})`
+          ctx.fillStyle = `rgba(${BRAND.calipso}, ${alpha})`
         }
         ctx.beginPath()
         ctx.arc(p.sx, p.sy, Math.max(0.4, r), 0, Math.PI * 2)

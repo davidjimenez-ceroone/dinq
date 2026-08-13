@@ -19,7 +19,7 @@ export function Hero() {
       {/* Fade the left side so the sphere never competes with the copy. */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/85 to-transparent lg:via-brand-dark/40"
+        className="absolute inset-0 bg-gradient-to-r from-brand-dark from-10% via-brand-dark/70 via-40% to-transparent to-70%"
       />
 
       <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
