@@ -1,4 +1,4 @@
-import { CurveFlow } from '@/components/brand/curve-flow'
+import { NeuralSphere } from '@/components/brand/neural-sphere'
 
 export function PageHero({
   title,
@@ -11,12 +11,17 @@ export function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden bg-brand-dark text-white">
-      <CurveFlow tone="mixed" className="absolute inset-0 h-full w-full opacity-30" />
+      <NeuralSphere className="pointer-events-none absolute inset-0 h-full w-full" />
       <div
         aria-hidden="true"
         className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-brand-calipso/20 blur-3xl"
       />
-      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+      {/* Fade the left side so the sphere never competes with the copy. */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-r from-brand-dark from-10% via-brand-dark/70 via-40% to-transparent to-75%"
+      />
+      <div className="relative mx-auto flex min-h-[420px] max-w-7xl flex-col justify-center px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         {breadcrumb ? (
           <nav aria-label="Ruta de navegación" className="mb-5">
             <ol className="flex flex-wrap items-center gap-2 text-sm text-white/60">
