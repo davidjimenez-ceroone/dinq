@@ -50,16 +50,29 @@ export default function ServicesPage() {
             )
           })}
 
-          <div className="rounded-3xl border border-border bg-muted/50 p-8 text-center sm:p-12">
-            <h2 className="text-balance text-2xl font-bold text-brand-dark sm:text-3xl">
-              {'¿Listo para aplicar IA en tu empresa?'}
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-pretty leading-relaxed text-muted-foreground">
-              {'Cuéntanos tu reto y diseñamos una hoja de ruta de inteligencia artificial a tu medida.'}
-            </p>
-            <CtaButton href={routes.contact} className="mt-8">
-              {'Solicita tu consultoría'}
-            </CtaButton>
+          <div className="relative overflow-hidden rounded-3xl bg-brand-dark p-10 text-center sm:p-16">
+            <div
+              aria-hidden="true"
+              className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-brand-amber/15 blur-3xl"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-brand-calipso/20 blur-3xl"
+            />
+            <div className="relative mx-auto max-w-2xl">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-amber">
+                {'Empieza hoy'}
+              </span>
+              <h2 className="mt-6 text-balance text-3xl font-bold leading-tight text-white sm:text-4xl">
+                {'¿Listo para aplicar IA en tu empresa?'}
+              </h2>
+              <p className="mx-auto mt-5 max-w-xl text-pretty leading-relaxed text-white/70">
+                {'Cuéntanos tu reto y diseñamos una hoja de ruta de inteligencia artificial a tu medida.'}
+              </p>
+              <CtaButton href={routes.contact} className="mt-8">
+                {'Solicita tu consultoría'}
+              </CtaButton>
+            </div>
           </div>
         </div>
       </div>
