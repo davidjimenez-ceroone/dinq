@@ -15,6 +15,7 @@ export type ServiceDetail = {
   description: string
   features: string[]
   icon: string
+  image: string
 }
 
 export const serviceDetails: ServiceDetail[] = [
@@ -24,6 +25,7 @@ export const serviceDetails: ServiceDetail[] = [
     description:
       'Nuestro equipo de expertos te ofrece asesoramiento integral para integrar la IA de forma estratégica, seleccionando las tecnologías adecuadas y formando a tus equipos.',
     icon: 'compass',
+    image: '/services/consultoria-estrategica.jpg',
     features: [
       'Asesoramiento ético y regulatorio en el uso de IA',
       'Detección de oportunidades para aplicar IA en procesos empresariales',
@@ -41,6 +43,7 @@ export const serviceDetails: ServiceDetail[] = [
     description:
       'Definimos y alineamos una hoja de ruta de inteligencia artificial con tus objetivos de negocio, identificando casos de uso de alto impacto, evaluando riesgos y determinando la viabilidad técnica y económica.',
     icon: 'cpu',
+    image: '/services/desarrollo-soluciones.jpg',
     features: [
       'Algoritmos personalizados segun el sector',
       'Automatización inteligente de procesos (RPA + IA)',
@@ -58,6 +61,7 @@ export const serviceDetails: ServiceDetail[] = [
     description:
       'Diseñamos, prototipamos e implementamos soluciones a medida desde chatbots y sistemas de visión por computadora hasta automatización de procesos para optimizar operaciones y mejorar la experiencia de cliente.',
     icon: 'bar-chart',
+    image: '/services/analisis-datos.jpg',
     features: [
       'Recolección, limpieza y estructuración de datos',
       'Visualización de insights clave con dashboards interactivos',
@@ -74,6 +78,7 @@ export const serviceDetails: ServiceDetail[] = [
     description:
       'Desarrollamos asistentes conversacionales personalizados con IA generativa para mejorar la atención al cliente e integrar soluciones con CRM, optimizando la comunicación y la eficiencia.',
     icon: 'message-circle',
+    image: '/services/chatbots-asistentes.jpg',
     features: [
       'Desarrollo de asistentes conversacionales personalizados',
       'IA generativa para atención al cliente',
@@ -91,6 +96,7 @@ export const serviceDetails: ServiceDetail[] = [
     description:
       'Ofrecemos talleres especializados para equipos directivos y técnicos, fomentando una cultura de Inteligencia Artificial en las organizaciones y brindando asistencia técnica post-implementación para asegurar un aprovechamiento continuo.',
     icon: 'graduation-cap',
+    image: '/services/formacion-acompanamiento.jpg',
     features: [
       'Talleres para equipos directivos y técnicos',
       'Cultura de Inteligencia Artificial para organizaciones',
@@ -106,6 +112,7 @@ export const serviceDetails: ServiceDetail[] = [
     description:
       'Realizamos auditorías de sesgos algorítmicos, diseñamos soluciones centradas en el usuario y la inclusión, y aseguramos el cumplimiento normativo para una implementación de la IA justa y confiable.',
     icon: 'shield-check',
+    image: '/services/diseno-etico.jpg',
     features: [
       'Auditoría de sesgos algorítmicos',
       'Diseños centrados en el usuario y la inclusión',
