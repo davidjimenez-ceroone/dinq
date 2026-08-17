@@ -1,71 +1,62 @@
-'use client'
-
-import { useState } from 'react'
 import { Section } from '@/components/ui/section'
 import { Reveal } from '@/components/ui/reveal'
 import { CtaButton } from '@/components/brand/cta-button'
 import { aboutTeaser, valuesVisionMission } from '@/content/home'
-import { CurveFlow } from '@/components/brand/curve-flow'
 
 export function ValuesTabs() {
   const tabs = valuesVisionMission.tabs
-  const [active, setActive] = useState(tabs[0].key)
-  const current = tabs.find((t) => t.key === active) ?? tabs[0]
 
   return (
-    <Section className="relative overflow-hidden">
-      <CurveFlow className="pointer-events-none absolute -right-24 top-0 h-full w-[540px] opacity-40" />
-      <div className="relative grid gap-12 lg:grid-cols-2 lg:items-center">
-        <Reveal>
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-              {aboutTeaser.eyebrow}
-            </p>
-            <h2 className="mt-4 text-balance text-2xl font-semibold leading-tight text-foreground sm:text-3xl lg:text-4xl">
-              {aboutTeaser.title}
-            </h2>
-            <p className="mt-5 text-pretty leading-relaxed text-muted-foreground">
-              {aboutTeaser.description}
-            </p>
-            <CtaButton href={aboutTeaser.cta.href} className="mt-8">
-              {aboutTeaser.cta.label}
-            </CtaButton>
-          </div>
-        </Reveal>
+    <Section className="bg-transparent">
+      <div className="relative overflow-hidden rounded-3xl bg-brand-dark px-6 py-12 text-white sm:px-10 lg:px-14 lg:py-16">
+        <div
+          aria-hidden="true"
+          className="absolute -right-16 -top-16 h-72 w-72 rounded-full bg-brand-calipso/20 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-20 -left-10 h-72 w-72 rounded-full bg-brand-amber/10 blur-3xl"
+        />
+        <div className="relative grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+          <Reveal>
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand-amber">
+                {aboutTeaser.eyebrow}
+              </p>
+              <h2 className="mt-4 text-balance text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
+                {aboutTeaser.title}
+              </h2>
+              <p className="mt-5 text-pretty leading-relaxed text-white/70">
+                {aboutTeaser.description}
+              </p>
+              <CtaButton href={aboutTeaser.cta.href} className="mt-8">
+                {aboutTeaser.cta.label}
+              </CtaButton>
+            </div>
+          </Reveal>
 
-        <Reveal delay={120}>
-          <div className="rounded-2xl border border-border bg-card p-2 shadow-sm">
-            <div
-              role="tablist"
-              aria-label="Valores, visión y misión"
-              className="flex gap-1 rounded-xl bg-muted p-1"
-            >
+          <Reveal delay={120}>
+            <div className="flex flex-col gap-4">
               {tabs.map((tab) => (
-                <button
+                <article
                   key={tab.key}
-                  role="tab"
-                  aria-selected={active === tab.key}
-                  onClick={() => setActive(tab.key)}
-                  className={`flex-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
-                    active === tab.key
-                      ? 'bg-card text-foreground shadow-sm'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
+                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-colors hover:border-brand-amber/40"
                 >
-                  {tab.label}
-                </button>
+                  <h3 className="flex items-center gap-2.5 text-base font-semibold text-white">
+                    <span
+                      aria-hidden="true"
+                      className="h-4 w-1 shrink-0 rounded-full bg-brand-amber"
+                    />
+                    {tab.label}
+                  </h3>
+                  <p className="mt-3 text-pretty text-sm leading-relaxed text-white/70">
+                    {tab.description}
+                  </p>
+                </article>
               ))}
             </div>
-            <div className="p-6">
-              <h3 className="text-balance text-lg font-semibold text-foreground">
-                {current.title}
-              </h3>
-              <p className="mt-4 leading-relaxed text-muted-foreground">
-                {current.description}
-              </p>
-            </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </div>
     </Section>
   )
