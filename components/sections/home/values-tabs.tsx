@@ -17,9 +17,9 @@ export function ValuesTabs() {
           aria-hidden="true"
           className="absolute -bottom-20 -left-10 h-72 w-72 rounded-full bg-brand-amber/10 blur-3xl"
         />
-        <div className="relative grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
-          <Reveal>
-            <div>
+        <div className="relative grid gap-12 lg:grid-cols-3 lg:items-center lg:gap-16">
+          <Reveal className="lg:col-span-2">
+            <div className="lg:pl-6 xl:pl-10">
               <p className="text-sm font-semibold uppercase tracking-widest text-brand-amber">
                 {aboutTeaser.eyebrow}
               </p>
@@ -40,16 +40,16 @@ export function ValuesTabs() {
               {tabs.map((tab) => (
                 <article
                   key={tab.key}
-                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-colors hover:border-brand-amber/40"
+                  className="rounded-2xl border border-brand-calipso/20 bg-brand-calipso/10 p-6 transition-colors hover:border-brand-amber/50"
                 >
-                  <h3 className="flex items-center gap-2.5 text-base font-semibold text-white">
+                  <h3 className="flex items-center gap-2.5 text-xl font-semibold text-white">
                     <span
                       aria-hidden="true"
-                      className="h-4 w-1 shrink-0 rounded-full bg-brand-amber"
+                      className="h-5 w-1.5 shrink-0 rounded-full bg-brand-amber"
                     />
                     {tab.label}
                   </h3>
-                  <p className="mt-3 text-pretty text-sm leading-relaxed text-white/70">
+                  <p className="mt-3 text-pretty text-base leading-relaxed text-white/80">
                     {tab.description}
                   </p>
                 </article>
