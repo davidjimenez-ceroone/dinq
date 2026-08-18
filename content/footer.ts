@@ -3,7 +3,7 @@ import { routes } from './seo'
 export const footerContent = {
   // Corporate message preserved from the current site.
   message:
-    'Transformando ideas a la excelencia con Dinq. Sube al siguiente nivel con la implementación de Inteligencia Artificial con Dinq.',
+    'Transformamos la inteligencia artificial en soluciones reales para tu negocio. Estrategia, automatización e innovación con Dinq.',
   email: 'info@dinq.ai',
   copyright: 'Dinq, Todos los derechos reservados.',
   parentGroup: {
