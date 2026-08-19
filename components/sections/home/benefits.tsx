@@ -5,7 +5,7 @@ import { benefits } from '@/content/home'
 
 export function Benefits() {
   return (
-    <Section className="relative overflow-hidden bg-brand-calipso/5">
+    <Section className="relative overflow-hidden bg-muted/40">
       <InteractiveMesh className="pointer-events-auto absolute inset-0 h-full w-full opacity-100" />
       <div className="relative mx-auto max-w-2xl text-center">
         <Reveal>
