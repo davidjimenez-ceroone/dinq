@@ -377,5 +377,5 @@ export const testimonials = {
 export const contactCta = {
   title: 'Solicita tu cita',
   description:
-    'Transformando ideas a la excelencia con Dinq. Sube al siguiente nivel con la implementación de Inteligencia Artificial con Dinq.',
+    'Transformamos la inteligencia artificial en soluciones reales para tu negocio. Estrategia, automatización e innovación con Dinq.',
 }
