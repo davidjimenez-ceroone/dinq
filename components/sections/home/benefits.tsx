@@ -1,13 +1,15 @@
 import { Section } from '@/components/ui/section'
 import { Reveal } from '@/components/ui/reveal'
+import { InteractiveMesh } from '@/components/brand/interactive-mesh'
 import { benefits } from '@/content/home'
 
 export function Benefits() {
   return (
-    <Section className="bg-muted/40">
-      <div className="mx-auto max-w-2xl text-center">
+    <Section className="relative overflow-hidden bg-muted/40">
+      <InteractiveMesh className="pointer-events-auto absolute inset-0 h-full w-full opacity-80" />
+      <div className="relative mx-auto max-w-2xl text-center">
         <Reveal>
-          <h2 className="text-balance text-2xl font-semibold text-foreground sm:text-3xl">
+          <h2 className="text-balance text-3xl font-semibold leading-tight text-foreground sm:text-4xl lg:text-5xl">
             {benefits.title}
           </h2>
         </Reveal>
