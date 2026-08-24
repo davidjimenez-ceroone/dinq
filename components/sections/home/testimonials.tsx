@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { Section, SectionHeading } from '@/components/ui/section'
 import { Reveal } from '@/components/ui/reveal'
 import { testimonials } from '@/content/home'
@@ -20,7 +21,10 @@ export function Testimonials() {
       <SectionHeading eyebrow={testimonials.eyebrow} title={testimonials.title} />
       <Reveal delay={100}>
         <figure className="mx-auto mt-12 flex h-[520px] max-w-3xl flex-col rounded-3xl border border-brand-calipso/70 bg-brand-calipso p-8 text-white shadow-lg shadow-brand-dark/10 sm:h-[440px] sm:p-12">
-          <Quote className="h-9 w-9 shrink-0 text-brand-amber" aria-hidden="true" />
+          <div className="flex h-16 items-center justify-between gap-6">
+            <Quote className="h-9 w-9 shrink-0 text-brand-amber" aria-hidden="true" />
+            <Image src={current.logo} alt={`Logotipo de ${current.company}`} width={150} height={64} className="h-14 w-auto object-contain" />
+          </div>
           <blockquote className="mt-6 flex-1 text-pretty text-lg leading-relaxed text-white">
             {current.quote}
           </blockquote>

@@ -340,36 +340,42 @@ export const testimonials = {
         'Empleados de Repsol han destacado cómo la implementación de IA generativa ha optimizado tareas rutinarias, permitiéndoles centrarse en actividades de mayor valor añadido. La empresa ha logrado ahorros significativos de tiempo y mejoras en la calidad del trabajo mediante el uso de prompts estructurados.',
       role: 'Director General Ejecutivo',
       company: 'Repsol Energía',
+      logo: '/logos/repsol.webp',
     },
     {
       quote:
         'En Europa, la cultura del riesgo y la regulación han frenado la adopción de la IA. Para afrontarlo, hemos firmado un acuerdo con Andersen que nos permite ofrecer soluciones de IA con respaldo legal, desde la estrategia hasta desarrollos personalizados, garantizando el cumplimiento normativo.',
       role: 'Presidente',
       company: '1MillionBot',
+      logo: '/logos/1millionbot.webp',
     },
     {
       quote:
         'El uso de la IA a gran escala nos permite mejorar nuestras capacidades operativas, aumentar la productividad de los empleados y optimizar la calidad del servicio al cliente. Esto impulsa el crecimiento empresarial y nos permite ofrecer soluciones más eficientes y personalizadas.',
       role: 'Director de Tecnología e Información',
       company: 'Bank of America',
+      logo: '/logos/bank-of-america.webp',
     },
     {
       quote:
         'La integración de IA en nuestros procesos internos y en los servicios que ofrecemos a nuestros clientes ha sido un cambio significativo. Hemos optimizado nuestras operaciones y ayudado a más de 65,000 pymes a gestionar su marketing digital de manera eficiente y rentable.',
       role: 'CEO',
       company: 'BeeDIGITAL',
+      logo: '/logos/bee-digital.webp',
     },
     {
       quote:
         'La implementación de IA ha transformado nuestra forma de trabajar. Gracias a la inteligencia artificial, hemos optimizado nuestros procesos de producción, mejorado la calidad de nuestros productos y reducido costos operativos. Esta tecnología nos ha permitido ser más eficientes y ofrecer soluciones más innovadoras a nuestros clientes.',
       role: 'CEO',
       company: 'Bosch',
+      logo: '/logos/bosch.webp',
     },
     {
       quote:
         'Nuestra IA conversacional predictiva, reconocida internacionalmente, aprende del contexto del usuario para anticiparse a sus necesidades. La aplicamos en sectores como automoción y electrónica, mejorando la personalización y eficiencia de nuestros clientes.',
       role: 'CEO',
       company: 'Sherpa.ai',
+      logo: '/logos/sherpa-ai.webp',
     },
   ],
 }
