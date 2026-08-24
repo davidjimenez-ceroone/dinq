@@ -19,22 +19,22 @@ export function Testimonials() {
     <Section>
       <SectionHeading eyebrow={testimonials.eyebrow} title={testimonials.title} />
       <Reveal delay={100}>
-        <figure className="mx-auto mt-12 max-w-3xl rounded-3xl border border-border bg-card p-8 sm:p-12">
-          <Quote className="h-9 w-9 text-primary/40" aria-hidden="true" />
-          <blockquote className="mt-6 text-pretty text-lg leading-relaxed text-foreground">
+        <figure className="mx-auto mt-12 max-w-3xl rounded-3xl border border-brand-calipso/70 bg-brand-calipso p-8 text-white shadow-lg shadow-brand-dark/10 sm:p-12">
+          <Quote className="h-9 w-9 text-brand-amber" aria-hidden="true" />
+          <blockquote className="mt-6 text-pretty text-lg leading-relaxed text-white">
             {current.quote}
           </blockquote>
           <figcaption className="mt-8 flex items-center justify-between">
             <div>
-              <div className="font-semibold text-foreground">{current.company}</div>
-              <div className="text-sm text-muted-foreground">{current.role}</div>
+              <div className="font-semibold text-white">{current.company}</div>
+              <div className="text-sm text-white/75">{current.role}</div>
             </div>
             <div className="flex gap-2">
               <button
                 type="button"
                 onClick={() => go(-1)}
                 aria-label="Testimonio anterior"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/50 text-white transition-colors hover:border-brand-amber hover:bg-brand-amber hover:text-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-amber"
               >
                 <ChevronLeft className="h-5 w-5" aria-hidden="true" />
               </button>
@@ -42,7 +42,7 @@ export function Testimonials() {
                 type="button"
                 onClick={() => go(1)}
                 aria-label="Siguiente testimonio"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/50 text-white transition-colors hover:border-brand-amber hover:bg-brand-amber hover:text-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-amber"
               >
                 <ChevronRight className="h-5 w-5" aria-hidden="true" />
               </button>
@@ -59,7 +59,7 @@ export function Testimonials() {
             aria-label={`Testimonio de ${item.company}`}
             onClick={() => setIndex(i)}
             className={`h-2 rounded-full transition-all ${
-              i === index ? 'w-6 bg-primary' : 'w-2 bg-border hover:bg-muted-foreground/40'
+              i === index ? 'w-6 bg-brand-amber' : 'w-2 bg-brand-calipso/40 hover:bg-brand-amber/70'
             }`}
           />
         ))}
