@@ -1,6 +1,7 @@
 import { Section } from '@/components/ui/section'
 import { Reveal } from '@/components/ui/reveal'
 import { AppointmentScheduler } from '@/components/sections/appointment-scheduler'
+import { CurveFlow } from '@/components/brand/curve-flow'
 import { contactCta } from '@/content/home'
 
 export function FinalContact() {
@@ -8,13 +9,19 @@ export function FinalContact() {
     <Section id="contacto" className="bg-muted/40">
       <div className="mx-auto flex max-w-5xl flex-col gap-10">
         <Reveal>
-          <div className="text-center">
-            <h2 className="text-balance text-3xl font-semibold leading-tight text-foreground sm:text-4xl lg:text-5xl">
-              {contactCta.title}
-            </h2>
-            <p className="mt-5 text-pretty leading-relaxed text-muted-foreground">
-              {contactCta.description}
-            </p>
+          <div className="relative overflow-hidden rounded-3xl bg-brand-dark px-8 py-12 text-center text-white sm:px-16 lg:py-14">
+            <CurveFlow tone="mixed" className="absolute inset-0 h-full w-full opacity-30" />
+            <div className="relative mx-auto max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand-amber">
+                {'Hablemos de tu proyecto'}
+              </p>
+              <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
+                {contactCta.title}
+              </h2>
+              <p className="mt-5 text-pretty leading-relaxed text-white/80">
+                {contactCta.description}
+              </p>
+            </div>
           </div>
         </Reveal>
         <Reveal delay={120}>
