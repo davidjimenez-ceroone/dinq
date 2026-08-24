@@ -37,10 +37,12 @@ export function ValuesTabs() {
 
           <Reveal delay={120}>
             <div className="mt-12 grid items-stretch gap-4 md:grid-cols-3 lg:mt-16">
-              {tabs.map((tab) => (
+              {tabs.map((tab, index) => (
                 <article
                   key={tab.key}
-                  className="flex h-full flex-col rounded-2xl border border-brand-calipso/20 bg-brand-calipso/10 p-6 transition-colors hover:border-brand-amber/50"
+                  className={`flex h-full flex-col rounded-2xl border border-brand-calipso/20 p-6 transition-colors hover:border-brand-amber/50 ${
+                    index > 0 ? 'bg-[rgba(34,156,193,0.66)]' : 'bg-brand-calipso/10'
+                  }`}
                 >
                   <h3 className="flex items-center gap-2.5 text-xl font-semibold text-white">
                     <span
