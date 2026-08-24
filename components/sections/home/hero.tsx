@@ -22,11 +22,14 @@ export function Hero() {
         className="absolute inset-0 bg-gradient-to-r from-brand-dark from-10% via-brand-dark/70 via-40% to-transparent to-70%"
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+      <div className="relative mx-auto max-w-7xl px-4 py-32 sm:px-6 lg:px-8 lg:py-40">
         <div className="max-w-3xl dinq-animate-in">
           <Eyebrow tone="light">{hero.eyebrow}</Eyebrow>
-          <h1 className="mt-5 text-balance text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
-            {hero.title}
+          <h1 className="mt-5 text-balance text-5xl font-semibold leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl">
+            {'Inteligencia Artificial para la '}
+            <span className="bg-gradient-to-r from-brand-amber via-brand-amber to-white bg-clip-text text-transparent">
+              {'transformación empresarial'}
+            </span>
           </h1>
           <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-white/80">
             {hero.description}
