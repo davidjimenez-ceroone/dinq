@@ -19,9 +19,9 @@ export function Testimonials() {
     <Section>
       <SectionHeading eyebrow={testimonials.eyebrow} title={testimonials.title} />
       <Reveal delay={100}>
-        <figure className="mx-auto mt-12 flex h-[420px] max-w-3xl flex-col rounded-3xl border border-brand-calipso/70 bg-brand-calipso p-8 text-white shadow-lg shadow-brand-dark/10 sm:h-[360px] sm:p-12">
+        <figure className="mx-auto mt-12 flex h-[520px] max-w-3xl flex-col rounded-3xl border border-brand-calipso/70 bg-brand-calipso p-8 text-white shadow-lg shadow-brand-dark/10 sm:h-[440px] sm:p-12">
           <Quote className="h-9 w-9 shrink-0 text-brand-amber" aria-hidden="true" />
-          <blockquote className="mt-6 flex-1 overflow-y-auto text-pretty text-lg leading-relaxed text-white">
+          <blockquote className="mt-6 flex-1 text-pretty text-lg leading-relaxed text-white">
             {current.quote}
           </blockquote>
           <figcaption className="mt-8 flex items-center justify-between">
