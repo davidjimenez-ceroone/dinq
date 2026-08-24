@@ -16,7 +16,7 @@ export function HelpBanner() {
             <p className="text-sm font-semibold uppercase tracking-widest text-brand-amber">
               {helpBanner.eyebrow}
             </p>
-            <h2 className="mt-4 text-balance text-2xl font-bold text-white sm:text-3xl">
+            <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
               {helpBanner.title}
             </h2>
             <p className="mt-5 text-pretty leading-relaxed text-white/85">
@@ -53,7 +53,7 @@ export function Financing() {
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
             <div>
               <SubvfyLogo />
-              <h2 className="mt-8 text-balance text-3xl font-bold leading-tight text-white sm:text-4xl">
+              <h2 className="mt-8 text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
                 {financing.title}
               </h2>
             </div>
@@ -87,7 +87,7 @@ export function AppointmentCta() {
     <Section>
       <Reveal>
         <div className="flex flex-col items-center gap-6 rounded-3xl border border-border bg-card px-8 py-12 text-center sm:px-16">
-          <h2 className="text-balance text-2xl font-semibold text-foreground sm:text-3xl">
+          <h2 className="text-balance text-3xl font-semibold leading-tight text-foreground sm:text-4xl lg:text-5xl">
             {appointmentCta.title}
           </h2>
           <p className="max-w-xl text-pretty leading-relaxed text-muted-foreground">

@@ -8,7 +8,7 @@ export function Tools() {
     <Section className="border-t border-border/60">
       <Reveal>
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-balance text-3xl font-bold leading-tight text-brand-dark sm:text-4xl lg:text-5xl">
+          <h2 className="text-balance text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl lg:text-5xl">
             {toolsSection.title}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">

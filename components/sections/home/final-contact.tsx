@@ -9,7 +9,7 @@ export function FinalContact() {
       <div className="mx-auto flex max-w-5xl flex-col gap-10">
         <Reveal>
           <div className="text-center">
-            <h2 className="text-balance text-2xl font-semibold text-foreground sm:text-3xl lg:text-4xl">
+            <h2 className="text-balance text-3xl font-semibold leading-tight text-foreground sm:text-4xl lg:text-5xl">
               {contactCta.title}
             </h2>
             <p className="mt-5 text-pretty leading-relaxed text-muted-foreground">

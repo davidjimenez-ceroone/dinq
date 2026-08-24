@@ -21,7 +21,7 @@ export function ValuesTabs() {
               <p className="text-sm font-semibold uppercase tracking-widest text-brand-amber">
                 {aboutTeaser.eyebrow}
               </p>
-              <h2 className="mt-4 text-balance text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
+              <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
                 {aboutTeaser.title}
               </h2>
               <p className="mt-5 text-pretty leading-relaxed text-white/70">
