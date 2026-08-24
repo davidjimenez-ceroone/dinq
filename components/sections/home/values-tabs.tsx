@@ -7,8 +7,9 @@ export function ValuesTabs() {
   const tabs = valuesVisionMission.tabs
 
   return (
-    <Section className="bg-transparent">
-      <div className="relative overflow-hidden rounded-3xl bg-brand-dark px-6 py-12 text-white sm:px-10 lg:px-14 lg:py-16">
+    <Section container={false} className="bg-transparent">
+      <div className="relative overflow-hidden bg-brand-dark px-6 py-12 text-white sm:px-10 lg:px-14 lg:py-16">
+        <div className="relative mx-auto max-w-7xl">
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[url('/about-background.jpg')] bg-cover bg-center opacity-20 mix-blend-screen"
@@ -59,6 +60,7 @@ export function ValuesTabs() {
             </div>
           </Reveal>
         </div>
+      </div>
       </div>
     </Section>
   )
