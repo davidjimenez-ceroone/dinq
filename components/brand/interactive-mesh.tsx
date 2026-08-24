@@ -67,7 +67,7 @@ export function InteractiveMesh({ className }: { className?: string }) {
         }
       }
 
-      context.lineWidth = 0.85
+      context.lineWidth = 0.65
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
           const point = points[row][col]
@@ -75,7 +75,7 @@ export function InteractiveMesh({ className }: { className?: string }) {
           const down = points[row + 1]?.[col]
           const distance = Math.hypot(point.x - pointer.x, point.y - pointer.y)
           const active = Math.max(0, 1 - distance / 300)
-          const alpha = 0.26 + active * 0.38
+          const alpha = 0.12 + active * 0.24
           context.strokeStyle = `rgba(${col % 5 === 0 ? AMBER : CALIPSO}, ${alpha})`
           context.beginPath()
           if (right) {
