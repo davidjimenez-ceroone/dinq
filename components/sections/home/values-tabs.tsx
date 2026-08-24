@@ -1,6 +1,7 @@
 import { Section } from '@/components/ui/section'
 import { Reveal } from '@/components/ui/reveal'
 import { CtaButton } from '@/components/brand/cta-button'
+import { Indicators } from '@/components/sections/home/indicators'
 import { aboutTeaser, valuesVisionMission } from '@/content/home'
 
 export function ValuesTabs() {
@@ -9,16 +10,12 @@ export function ValuesTabs() {
   return (
     <Section container={false} className="bg-transparent">
       <div className="relative overflow-hidden bg-brand-dark px-6 py-12 text-white sm:px-10 lg:px-14 lg:py-16">
-        <div className="relative mx-auto max-w-7xl">
         <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-[url('/about-background.jpg')] bg-cover bg-center opacity-20 mix-blend-screen"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-brand-dark/80"
-        />
-        <div className="relative">
+        aria-hidden="true"
+        className="absolute inset-0 bg-[url('/about-background.jpg')] bg-cover bg-center opacity-20 mix-blend-screen"
+      />
+      <div aria-hidden="true" className="absolute inset-0 bg-brand-dark/80" />
+      <div className="relative mx-auto max-w-7xl">
           <Reveal>
             <div className="max-w-4xl lg:pl-6 xl:pl-10">
               <p className="text-sm font-semibold uppercase tracking-widest text-brand-amber">
@@ -59,8 +56,8 @@ export function ValuesTabs() {
               ))}
             </div>
           </Reveal>
+          <Indicators embedded />
         </div>
-      </div>
       </div>
     </Section>
   )

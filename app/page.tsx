@@ -1,7 +1,6 @@
 import { Hero } from '@/components/sections/home/hero'
 import { Tools } from '@/components/sections/home/tools'
 import { ValuesTabs } from '@/components/sections/home/values-tabs'
-import { Indicators } from '@/components/sections/home/indicators'
 import { ServicesGrid } from '@/components/sections/home/services-grid'
 import { HelpBanner, Financing, AppointmentCta } from '@/components/sections/home/banners'
 import { Process } from '@/components/sections/home/process'
@@ -15,7 +14,6 @@ export default function HomePage() {
       <Hero />
       <Tools />
       <ValuesTabs />
-      <Indicators />
       <ServicesGrid />
       <HelpBanner />
       <Process />
