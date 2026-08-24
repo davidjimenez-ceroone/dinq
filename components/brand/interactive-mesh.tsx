@@ -44,7 +44,7 @@ export function InteractiveMesh({ className }: { className?: string }) {
 
     const draw = () => {
       context.clearRect(0, 0, width, height)
-      const gap = Math.max(34, Math.min(58, width / 24))
+      const gap = Math.max(16, Math.min(28, width / 45))
       const cols = Math.ceil(width / gap) + 2
       const rows = Math.ceil(height / gap) + 2
       const points: { x: number; y: number }[][] = []
