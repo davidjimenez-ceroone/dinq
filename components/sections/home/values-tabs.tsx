@@ -14,7 +14,7 @@ export function ValuesTabs() {
         aria-hidden="true"
         className="absolute inset-0 bg-[url('/about-background.jpg')] bg-cover bg-center opacity-20 mix-blend-screen"
       />
-      <div aria-hidden="true" className="absolute inset-0 bg-brand-dark/80" />
+      <div aria-hidden="true" className="absolute inset-0 bg-brand-dark/20" />
       <div className="relative mx-auto max-w-7xl">
           <Reveal>
             <div className="max-w-4xl lg:pl-6 xl:pl-10">
@@ -35,12 +35,10 @@ export function ValuesTabs() {
 
           <Reveal delay={120}>
             <div className="mt-12 grid items-stretch gap-4 md:grid-cols-3 lg:mt-16">
-              {tabs.map((tab, index) => (
+              {tabs.map((tab) => (
                 <article
                   key={tab.key}
-                  className={`flex h-full flex-col rounded-2xl border border-brand-calipso/20 p-6 transition-colors hover:border-brand-amber/50 ${
-                    index > 0 ? 'bg-[rgba(34,156,193,0.66)]' : 'bg-brand-calipso/10'
-                  }`}
+                  className="flex h-full flex-col rounded-2xl border border-brand-calipso/20 bg-[rgba(34,156,193,0.66)] p-6 transition-colors hover:border-brand-amber/50"
                 >
                   <h3 className="flex items-center gap-2.5 text-xl font-semibold text-white">
                     <span
