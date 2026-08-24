@@ -17,7 +17,7 @@ export function ValuesTabs() {
       <div aria-hidden="true" className="absolute inset-0 bg-brand-dark/20" />
       <div className="relative mx-auto max-w-7xl">
           <Reveal>
-            <div className="max-w-4xl lg:pl-6 xl:pl-10">
+            <div className="mx-auto max-w-4xl text-center">
               <p className="text-sm font-semibold uppercase tracking-widest text-brand-amber">
                 {aboutTeaser.eyebrow}
               </p>

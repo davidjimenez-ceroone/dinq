@@ -76,7 +76,7 @@ export function Indicators({ embedded = false }: { embedded?: boolean }) {
 
   return (
     <div className={embedded ? 'relative overflow-hidden' : 'relative overflow-hidden bg-brand-dark'}>
-      <Section className={embedded ? 'border-t border-white/15 py-12 sm:py-14 lg:py-16' : undefined}>
+      <Section className={embedded ? 'py-12 sm:py-14 lg:py-16' : undefined}>
         <div ref={ref} className="grid grid-cols-2 gap-8 lg:grid-cols-4">
           {indicators.map((item) => (
             <Indicator key={item.label} {...item} active={active} />
