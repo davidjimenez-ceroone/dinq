@@ -8,7 +8,7 @@ import { ArrowRight } from 'lucide-react'
 
 export function ServicesGrid() {
   return (
-    <Section className="relative overflow-hidden">
+    <Section className="relative -mt-16 overflow-hidden sm:-mt-20 lg:-mt-24">
       <div
         aria-hidden="true"
         className="dinq-geometric-drift pointer-events-none absolute inset-0 bg-[url('/services-background.png')] bg-cover bg-center opacity-70"
