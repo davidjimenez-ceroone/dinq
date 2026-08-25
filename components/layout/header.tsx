@@ -38,7 +38,7 @@ export function Header() {
           : 'border-b border-transparent bg-background',
       )}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Logo className="scale-110 origin-left" />
 
         <nav aria-label="Navegación principal" className="hidden lg:block">
