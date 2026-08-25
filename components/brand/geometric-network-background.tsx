@@ -31,9 +31,9 @@ export function GeometricNetworkBackground({ className }: { className?: string }
       context.clearRect(0, 0, width, height)
       const elapsed = now - startedAt
       const cycle = reducedMotion ? 1 : (elapsed % 16000) / 16000
-      const revealProgress = reducedMotion ? 1 : cycle
-      const easedProgress = revealProgress * revealProgress * (3 - 2 * revealProgress)
-      const breathingProgress = reducedMotion ? 1 : 0.18 + easedProgress * 0.82
+      const breathingProgress = reducedMotion
+        ? 1
+        : 0.18 + (1 - Math.cos(cycle * Math.PI * 2)) * 0.41
       progress = breathingProgress
       const spacing = 76
       const columns = Math.ceil(width / spacing) + 2
