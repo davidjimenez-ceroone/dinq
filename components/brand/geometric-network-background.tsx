@@ -31,10 +31,10 @@ export function GeometricNetworkBackground({ className }: { className?: string }
       context.clearRect(0, 0, width, height)
       const elapsed = now - startedAt
       const cycle = reducedMotion ? 1 : (elapsed % 16000) / 16000
-      const revealProgress = reducedMotion ? 1 : Math.min(1, cycle / 0.72)
+      const revealProgress = reducedMotion ? 1 : cycle
       const easedProgress = revealProgress * revealProgress * (3 - 2 * revealProgress)
-      const fadeOut = reducedMotion ? 1 : cycle < 0.72 ? 1 : 1 - (cycle - 0.72) / 0.28
-      progress = easedProgress * (fadeOut * fadeOut * (3 - 2 * fadeOut))
+      const breathingProgress = reducedMotion ? 1 : 0.18 + easedProgress * 0.82
+      progress = breathingProgress
       const spacing = 76
       const columns = Math.ceil(width / spacing) + 2
       const rows = Math.ceil(height / spacing) + 2
