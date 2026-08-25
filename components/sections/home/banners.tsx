@@ -10,7 +10,7 @@ export function HelpBanner() {
   return (
     <Section>
       <Reveal>
-        <div className="relative overflow-hidden rounded-3xl bg-brand-dark px-8 py-14 text-center text-white sm:px-16">
+        <div className="relative overflow-hidden rounded-3xl bg-brand-dark-2 px-8 py-14 text-center text-white sm:px-16">
           <CurveFlow tone="mixed" className="absolute inset-0 h-full w-full opacity-30" />
           <div className="relative mx-auto max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-widest text-brand-amber">
