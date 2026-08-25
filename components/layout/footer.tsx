@@ -38,6 +38,19 @@ export function Footer() {
                 </a>
               ))}
             </div>
+            <a
+              href="https://bigto.one"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visitar Bigtoone"
+              className="mt-6 block w-fit transition-opacity hover:opacity-80"
+            >
+              <img
+                src="/bigtoone-banner.png"
+                alt="Bigtoone"
+                className="h-auto w-full max-w-sm rounded-2xl"
+              />
+            </a>
           </div>
 
           <nav aria-label="Navegación del pie de página">
@@ -69,16 +82,6 @@ export function Footer() {
               ))}
               <li>
                 <CookieSettingsButton className="text-white/70 hover:text-brand-amber" />
-              </li>
-              <li>
-                <a
-                  href={footerContent.parentGroup.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/70 hover:text-brand-amber"
-                >
-                  {footerContent.parentGroup.label}
-                </a>
               </li>
             </ul>
           </nav>
