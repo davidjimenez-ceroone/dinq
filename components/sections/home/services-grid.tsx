@@ -5,15 +5,12 @@ import { servicesSection } from '@/content/home'
 import { routes } from '@/content/seo'
 import { iconMap } from '@/lib/icons'
 import { ArrowRight } from 'lucide-react'
+import { GeometricNetworkBackground } from '@/components/brand/geometric-network-background'
 
 export function ServicesGrid() {
   return (
     <Section className="relative -mt-16 overflow-hidden sm:-mt-20 lg:-mt-24">
-      <div
-        aria-hidden="true"
-        className="dinq-geometric-drift pointer-events-none absolute inset-0 bg-[url('/services-background.png')] bg-cover bg-center opacity-70"
-      />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-background/45" />
+      <GeometricNetworkBackground className="pointer-events-none absolute inset-0 h-full w-full opacity-90" />
       <div className="relative">
         <SectionHeading eyebrow={servicesSection.eyebrow} title={servicesSection.title} />
       <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
