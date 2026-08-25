@@ -11,7 +11,7 @@ export function ServicesGrid() {
     <Section className="relative overflow-hidden">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[url('/services-background.png')] bg-cover bg-center opacity-70"
+        className="dinq-geometric-drift pointer-events-none absolute inset-0 bg-[url('/services-background.png')] bg-cover bg-center opacity-70"
       />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-background/45" />
       <div className="relative">

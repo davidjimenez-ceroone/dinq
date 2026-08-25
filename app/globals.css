@@ -112,6 +112,23 @@
   }
 }
 
+/* Subtle motion for the geometric services background */
+@keyframes dinq-geometric-drift {
+  0%, 100% {
+    background-position: 50% 50%;
+    transform: scale(1);
+  }
+  50% {
+    background-position: 53% 48%;
+    transform: scale(1.025);
+  }
+}
+
+.dinq-geometric-drift {
+  animation: dinq-geometric-drift 24s ease-in-out infinite;
+  transform-origin: center;
+}
+
 /* Subtle entrance animation, disabled under reduced motion */
 @keyframes dinq-fade-up {
   from {
