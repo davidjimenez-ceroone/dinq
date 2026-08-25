@@ -71,13 +71,13 @@ export function NeuralNetworkBackground({ className }: { className?: string }) {
           context.beginPath()
           context.moveTo(node.x, node.y)
           context.lineTo(other.x, other.y)
-          context.strokeStyle = `rgba(${index % 7 === 0 ? AMBER : CALIPSO}, ${(1 - distance / 115) * 0.24})`
+          context.strokeStyle = `rgba(${index % 7 === 0 ? AMBER : CALIPSO}, ${(1 - distance / 115) * 0.30})`
           context.lineWidth = 0.7
           context.stroke()
         })
         context.beginPath()
         context.arc(node.x, node.y, node.radius, 0, Math.PI * 2)
-        context.fillStyle = `rgba(${index % 7 === 0 ? AMBER : CALIPSO}, 0.48)`
+        context.fillStyle = `rgba(${index % 7 === 0 ? AMBER : CALIPSO}, 0.58)`
         context.fill()
       })
 
