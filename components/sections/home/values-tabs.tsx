@@ -22,7 +22,8 @@ export function ValuesTabs() {
                 {aboutTeaser.eyebrow}
               </p>
               <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
-                {aboutTeaser.title}
+                {'Llevamos la innovación al corazón de tu negocio mediante '}
+                <span className="text-brand-amber">{'soluciones de IA personalizadas y efectivas'}</span>
               </h2>
               <p className="mt-5 text-pretty leading-relaxed text-white/70">
                 {aboutTeaser.description}
