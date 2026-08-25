@@ -75,11 +75,16 @@ export function SectionHeading({
         )}
       >
         {eyebrow ? <Eyebrow tone={tone}>{eyebrow}</Eyebrow> : null}
-        <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl lg:text-5xl">
+        <h2
+          className={cn(
+            'mt-4 text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl',
+            tone === 'light' ? 'text-white' : 'text-brand-dark',
+          )}
+        >
           {title}
         </h2>
         {description ? (
-          <p className="mt-5 text-pretty text-lg leading-relaxed text-muted-foreground">
+          <p className={cn('mt-5 text-pretty text-lg leading-relaxed', tone === 'light' ? 'text-white/80' : 'text-muted-foreground')}>
             {description}
           </p>
         ) : null}
