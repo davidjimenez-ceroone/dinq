@@ -3,6 +3,7 @@ import { Section } from '@/components/ui/section'
 import { Reveal } from '@/components/ui/reveal'
 import { CtaButton } from '@/components/brand/cta-button'
 import { CurveFlow } from '@/components/brand/curve-flow'
+import { NeuralSphere } from '@/components/brand/neural-sphere'
 import { helpBanner, financing, appointmentCta } from '@/content/home'
 import { routes } from '@/content/seo'
 
@@ -11,7 +12,8 @@ export function HelpBanner() {
     <Section className="bg-brand-dark-2">
       <Reveal>
         <div className="relative overflow-hidden rounded-3xl bg-brand-dark px-8 py-14 text-center text-white sm:px-16">
-          <CurveFlow tone="mixed" className="absolute inset-0 h-full w-full opacity-30" />
+          <NeuralSphere className="pointer-events-none absolute inset-0 h-full w-full scale-[1.35] opacity-45" />
+          <div className="pointer-events-none absolute inset-0 bg-brand-dark/35" />
           <div className="relative mx-auto max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-widest text-brand-amber">
               {helpBanner.eyebrow}
