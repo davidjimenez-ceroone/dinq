@@ -22,11 +22,9 @@ export const footerContent = {
     { label: 'Política de Privacidad', href: routes.privacy },
     { label: 'Política de Cookies', href: routes.cookies },
   ],
-  // Social networks currently linked on the live site.
-  // [PENDIENTE DE IMPORTAR DEL SITIO ACTUAL]: confirmar URLs exactas de perfiles.
   social: [
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/', platform: 'linkedin' },
-    { label: 'Instagram', href: 'https://www.instagram.com/', platform: 'instagram' },
-    { label: 'X', href: 'https://x.com/', platform: 'x' },
+    { label: 'Facebook', href: 'https://facebook.com/dinqai', platform: 'facebook' },
+    { label: 'Instagram', href: 'https://instagram.com/dinq_ai', platform: 'instagram' },
+    { label: 'LinkedIn', href: 'https://linkedin.com/company/dinq-ai', platform: 'linkedin' },
   ],
 }
