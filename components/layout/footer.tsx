@@ -38,19 +38,6 @@ export function Footer() {
                 </a>
               ))}
             </div>
-            <a
-              href="https://bigto.one"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visitar Bigtoone"
-              className="mt-6 block w-fit transition-opacity hover:opacity-80"
-            >
-              <img
-                src="/bigtoone-banner.png"
-                alt="Bigtoone"
-                className="h-auto w-full max-w-sm rounded-2xl"
-              />
-            </a>
           </div>
 
           <nav aria-label="Navegación del pie de página">
@@ -87,7 +74,23 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-white/50">
+        <div className="mt-12 flex justify-center border-t border-white/10 pt-10">
+          <a
+            href="https://bigto.one"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visitar Bigtoone"
+            className="block w-full max-w-md transition-opacity hover:opacity-80"
+          >
+            <img
+              src="/bigtoone-banner.png"
+              alt="Bigtoone"
+              className="h-auto w-full rounded-2xl"
+            />
+          </a>
+        </div>
+
+        <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-white/50">
           Copyright© {year} {footerContent.copyright}
         </div>
       </div>
