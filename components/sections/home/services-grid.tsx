@@ -8,8 +8,14 @@ import { ArrowRight } from 'lucide-react'
 
 export function ServicesGrid() {
   return (
-    <Section>
-      <SectionHeading eyebrow={servicesSection.eyebrow} title={servicesSection.title} />
+    <Section className="relative overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[url('/services-background.png')] bg-cover bg-center opacity-70"
+      />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-background/45" />
+      <div className="relative">
+        <SectionHeading eyebrow={servicesSection.eyebrow} title={servicesSection.title} />
       <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {servicesSection.services.map((service, i) => {
           const Icon = iconMap[service.icon] ?? iconMap.compass
@@ -37,6 +43,7 @@ export function ServicesGrid() {
             </Reveal>
           )
         })}
+      </div>
       </div>
     </Section>
   )
