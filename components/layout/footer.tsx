@@ -90,7 +90,7 @@ export function Footer() {
           </a>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-white/50">
+        <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-white/50">
           Copyright© {year} {footerContent.copyright}
         </div>
       </div>
