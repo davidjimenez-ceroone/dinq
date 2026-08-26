@@ -5,12 +5,12 @@ import { servicesSection } from '@/content/home'
 import { routes } from '@/content/seo'
 import { iconMap } from '@/lib/icons'
 import { ArrowRight } from 'lucide-react'
-import { GeometricNetworkBackground } from '@/components/brand/geometric-network-background'
+import { NeuralNetworkBackground } from '@/components/brand/neural-network-background'
 
 export function ServicesGrid() {
   return (
     <Section className="relative -mt-16 overflow-hidden sm:-mt-20 lg:-mt-24">
-      <GeometricNetworkBackground className="pointer-events-none absolute inset-0 h-full w-full opacity-90" />
+      <NeuralNetworkBackground className="pointer-events-none absolute inset-0 h-full w-full opacity-75" />
       <div className="relative">
         <SectionHeading eyebrow={servicesSection.eyebrow} title={servicesSection.title} />
       <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
