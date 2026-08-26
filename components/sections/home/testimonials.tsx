@@ -17,7 +17,13 @@ export function Testimonials() {
   }
 
   return (
-    <Section className="bg-brand-dark-2">
+    <Section className="relative overflow-hidden bg-brand-dark-2">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[url('/testimonials-office.jpg')] bg-cover bg-center opacity-35"
+      />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-brand-dark-2/75" />
+      <div className="relative">
       <SectionHeading
         eyebrow={testimonials.eyebrow}
         title={
@@ -76,6 +82,7 @@ export function Testimonials() {
             }`}
           />
         ))}
+      </div>
       </div>
     </Section>
   )
