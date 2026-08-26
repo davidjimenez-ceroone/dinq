@@ -52,7 +52,7 @@ export default function ContactPage() {
         breadcrumb={[{ label: 'Inicio', href: routes.home }, { label: 'Contacto' }]}
       />
 
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="flex flex-col gap-12">
           <Reveal>
             <div>
