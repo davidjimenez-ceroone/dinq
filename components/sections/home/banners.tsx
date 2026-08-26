@@ -55,7 +55,7 @@ export function Financing() {
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
             <div>
               <SubvfyLogo />
-              <h2 className="mt-8 text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
+              <h2 className="mt-8 text-balance text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
                 {financing.title}
               </h2>
             </div>
