@@ -8,7 +8,7 @@ export function ValuesTabs() {
   const tabs = valuesVisionMission.tabs
 
   return (
-    <Section container={false} className="bg-transparent">
+    <Section container={false} className="bg-transparent pt-0">
       <div className="relative overflow-hidden bg-brand-dark px-6 py-12 text-white sm:px-10 lg:px-14 lg:py-16">
         <div
         aria-hidden="true"
