@@ -49,7 +49,7 @@ function SubvfyLogo() {
 
 export function Financing() {
   return (
-    <Section className="bg-muted/40">
+    <Section className="bg-brand-dark">
       <Reveal>
         <div className="rounded-3xl bg-brand-dark px-8 py-12 sm:px-12 lg:px-16 lg:py-14">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
