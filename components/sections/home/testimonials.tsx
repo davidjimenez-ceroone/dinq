@@ -23,7 +23,7 @@ export function Testimonials() {
         title={
           <>
             {'Comentarios/opiniones de PYMES y '}
-            <span className="text-brand-amber">{'empresas internacionales con uso de IA'}</span>
+            <span className="text-brand-amber">{'empresas internacionales que usan la IA'}</span>
           </>
         }
         tone="light"
