@@ -6,7 +6,7 @@ import { NeuralNetworkBackground } from '@/components/brand/neural-network-backg
 
 export function Tools() {
   return (
-    <Section className="relative overflow-hidden border-t border-border/60">
+    <Section className="relative overflow-hidden border-t border-border/60 pb-8 sm:pb-10 lg:pb-12">
       <NeuralNetworkBackground className="pointer-events-auto absolute inset-0 h-full w-full opacity-85" />
       <div className="relative">
       <Reveal>
