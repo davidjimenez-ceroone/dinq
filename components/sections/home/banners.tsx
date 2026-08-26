@@ -49,10 +49,11 @@ function SubvfyLogo() {
 
 export function Financing() {
   return (
-    <Section className="bg-brand-dark">
+    <Section className="bg-brand-dark-2">
       <Reveal>
-        <div className="rounded-3xl bg-brand-dark px-8 py-12 sm:px-12 lg:px-16 lg:py-14">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <div className="relative overflow-hidden rounded-3xl bg-brand-dark px-8 py-12 sm:px-12 lg:px-16 lg:py-14">
+          <NeuralSphere className="pointer-events-none absolute right-0 top-0 h-full w-1/2 opacity-25" />
+          <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
             <div>
               <SubvfyLogo />
               <h2 className="mt-8 text-balance text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
