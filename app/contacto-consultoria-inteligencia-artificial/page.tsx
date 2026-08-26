@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Mail, Clock, MessageSquare } from 'lucide-react'
 import { PageHero } from '@/components/layout/page-hero'
-import { CurveFlow } from '@/components/brand/curve-flow'
+import { NeuralNetworkBackground } from '@/components/brand/neural-network-background'
 import { Reveal } from '@/components/ui/reveal'
 import { AppointmentScheduler } from '@/components/sections/appointment-scheduler'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
@@ -57,7 +57,7 @@ export default function ContactPage() {
         <div className="flex flex-col gap-12">
           <Reveal>
             <div className="relative overflow-hidden rounded-3xl bg-brand-dark px-8 py-12 text-white sm:px-12 lg:px-16 lg:py-14">
-              <CurveFlow tone="mixed" className="absolute inset-0 h-full w-full opacity-30" />
+              <NeuralNetworkBackground className="pointer-events-none absolute inset-0 h-full w-full opacity-75" />
               <div className="relative">
                 <p className="text-sm font-semibold uppercase tracking-widest text-brand-amber">
                   {'Hablemos de tu proyecto'}
