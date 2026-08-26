@@ -1,15 +1,12 @@
 import { Section, SectionHeading } from '@/components/ui/section'
 import { Reveal } from '@/components/ui/reveal'
+import { NeuralNetworkBackground } from '@/components/brand/neural-network-background'
 import { howWeWork } from '@/content/home'
 
 export function Process() {
   return (
     <Section className="relative overflow-hidden bg-muted/40 py-24 sm:py-28 lg:py-32">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[url('/process-office.jpg')] bg-cover bg-center opacity-45"
-      />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-background/45" />
+      <NeuralNetworkBackground className="pointer-events-none absolute inset-0 h-full w-full opacity-75" />
       <div className="relative">
         <SectionHeading eyebrow={howWeWork.eyebrow} title={howWeWork.title} />
       <ol className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
