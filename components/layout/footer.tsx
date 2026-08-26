@@ -80,7 +80,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visitar Bigtoone"
-            className="block w-full max-w-md transition-opacity hover:opacity-80"
+            className="block w-full max-w-xs transition-opacity hover:opacity-80"
           >
             <img
               src="/bigtoone-banner.png"
