@@ -18,7 +18,16 @@ export function Testimonials() {
 
   return (
     <Section className="bg-brand-dark-2">
-      <SectionHeading eyebrow={testimonials.eyebrow} title={testimonials.title} tone="light" />
+      <SectionHeading
+        eyebrow={testimonials.eyebrow}
+        title={
+          <>
+            {'Comentarios/opiniones de PYMES y '}
+            <span className="text-brand-amber">{'empresas internacionales con uso de IA'}</span>
+          </>
+        }
+        tone="light"
+      />
       <Reveal delay={100}>
         <figure className="mx-auto mt-12 flex h-[520px] max-w-3xl flex-col rounded-3xl border border-brand-calipso/70 bg-brand-calipso p-8 text-white shadow-lg shadow-brand-dark/10 sm:h-[440px] sm:p-12">
           <div className="flex h-24 items-center justify-between gap-6">

@@ -61,7 +61,7 @@ export function SectionHeading({
   tone = 'calipso',
 }: {
   eyebrow?: string
-  title: string
+  title: React.ReactNode
   description?: string
   align?: 'center' | 'left'
   tone?: 'calipso' | 'amber' | 'light'
