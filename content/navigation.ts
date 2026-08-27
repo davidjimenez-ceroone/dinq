@@ -10,10 +10,9 @@ export const mainNav: NavItem[] = [
   { label: 'Sobre DINQ', href: routes.about },
   { label: 'Servicios', href: routes.services },
   { label: 'Actualidad', href: routes.blog },
-  { label: 'Contacto', href: routes.contact },
 ]
 
 export const primaryCta = {
-  label: 'Solicita tu cita',
+  label: 'Contacto',
   href: routes.contact,
 }
