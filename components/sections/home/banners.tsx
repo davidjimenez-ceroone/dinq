@@ -87,7 +87,8 @@ export function Financing() {
 
 export function AppointmentCta() {
   return (
-    <Section className="bg-brand-dark">
+    <Section className="relative overflow-hidden bg-background">
+      <NeuralNetworkBackground className="pointer-events-none absolute inset-0 h-full w-full opacity-75" />
       <Reveal>
         <div className="relative overflow-hidden rounded-3xl bg-brand-dark-2 px-8 py-12 text-center text-white sm:px-16">
           <NeuralNetworkBackground className="pointer-events-none absolute inset-0 h-full w-full opacity-75" />
