@@ -69,7 +69,7 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <CtaButton href={primaryCta.href}>{primaryCta.label}</CtaButton>
+          <CtaButton href={primaryCta.href} size="lg">{primaryCta.label}</CtaButton>
         </div>
 
         <button
