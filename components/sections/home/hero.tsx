@@ -35,7 +35,12 @@ export function Hero() {
             {hero.description}
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <CtaButton href={hero.primaryCta.href} variant="primary" size="lg">
+            <CtaButton
+              href={hero.primaryCta.href}
+              variant="calipso"
+              size="lg"
+              className="hover:bg-brand-amber hover:brightness-100 hover:shadow-lg hover:shadow-brand-amber/25"
+            >
               {hero.primaryCta.label}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </CtaButton>
