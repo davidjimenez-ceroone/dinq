@@ -10,7 +10,7 @@ import { NeuralNetworkBackground } from '@/components/brand/neural-network-backg
 export function ServicesGrid() {
   return (
     <Section className="relative -mt-16 overflow-hidden sm:-mt-20 lg:-mt-24">
-      <NeuralNetworkBackground className="pointer-events-none absolute inset-0 h-full w-full opacity-75" />
+      <NeuralNetworkBackground className="pointer-events-none absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-[1.45] opacity-75" />
       <div className="relative">
         <SectionHeading eyebrow={servicesSection.eyebrow} title={servicesSection.title} />
       <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
