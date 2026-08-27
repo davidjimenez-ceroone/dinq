@@ -5,7 +5,7 @@ import { benefits } from '@/content/home'
 
 export function Benefits() {
   return (
-    <Section className="relative overflow-hidden bg-brand-dark-2 pb-0">
+    <Section className="relative overflow-hidden bg-background pb-0">
       <NeuralNetworkBackground className="pointer-events-none absolute inset-0 h-full w-full opacity-75" />
       <div className="relative mx-auto max-w-2xl text-center">
         <Reveal>

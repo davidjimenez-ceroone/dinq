@@ -6,7 +6,7 @@ import { contactCta } from '@/content/home'
 
 export function FinalContact() {
   return (
-    <Section id="contacto" className="relative overflow-hidden bg-brand-dark-2 pt-0">
+    <Section id="contacto" className="relative overflow-hidden bg-background pt-0">
       <NeuralNetworkBackground className="pointer-events-none absolute inset-0 h-full w-full opacity-75" />
       <div className="mx-auto flex max-w-7xl flex-col gap-10">
         <Reveal>
