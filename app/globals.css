@@ -112,6 +112,17 @@
   }
 }
 
+.dinq-diagonal-pattern {
+  background-color: var(--background);
+  background-image: repeating-linear-gradient(
+    105deg,
+    transparent 0,
+    transparent 7rem,
+    color-mix(in srgb, var(--color-brand-calipso) 5%, transparent) 7rem,
+    color-mix(in srgb, var(--color-brand-calipso) 5%, transparent) 9rem
+  );
+}
+
 /* Subtle motion for the geometric services background */
 @keyframes dinq-geometric-drift {
   0%, 100% {
