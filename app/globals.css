@@ -117,9 +117,9 @@
   background-image: repeating-linear-gradient(
     105deg,
     transparent 0,
-    transparent 7rem,
-    color-mix(in srgb, var(--color-brand-calipso) 5%, transparent) 7rem,
-    color-mix(in srgb, var(--color-brand-calipso) 5%, transparent) 9rem
+    transparent 6rem,
+    color-mix(in srgb, var(--color-brand-calipso) 3%, transparent) 6rem,
+    color-mix(in srgb, var(--color-brand-calipso) 3%, transparent) 8rem
   );
 }
 
