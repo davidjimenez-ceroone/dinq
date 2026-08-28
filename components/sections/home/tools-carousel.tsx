@@ -6,6 +6,7 @@ import { toolsSection, type Tool, type ToolCategory } from '@/content/home'
 import { cn } from '@/lib/utils'
 
 const providedLogoUrls: Record<string, string> = {
+  vibetasking: '/logos/vibetasking.png',
   manus: '/logos/manus.png',
   relevance: '/logos/relevance.png',
   grok: '/logos/grok.png',
