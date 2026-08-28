@@ -35,9 +35,9 @@ function ToolRow({ tool }: { tool: Tool }) {
           <Image
             src={logoUrl(tool.slug) || '/placeholder.svg'}
             alt={`Logotipo de ${tool.name}`}
-            width={18}
-            height={18}
-            className="h-[18px] w-[18px] object-contain"
+            width={22}
+            height={22}
+            className="h-[22px] w-[22px] object-contain"
             unoptimized
           />
         </span>

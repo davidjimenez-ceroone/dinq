@@ -118,7 +118,7 @@ export const toolsSection = {
     {
       title: 'Sistemas agénticos / Orquestación',
       tools: [
-        { name: 'VibeTasking', slug: 'vibetasking' },
+        { name: 'Vibetasking', slug: 'vibetasking' },
         { name: 'Lindy', slug: 'lindy' },
         { name: 'Relevance AI', slug: 'relevance' },
         { name: 'Dify AI', slug: 'dify' },
