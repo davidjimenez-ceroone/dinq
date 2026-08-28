@@ -29,7 +29,7 @@ export function ServicesGrid() {
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {service.summary}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-calipso">
                   {'Saber más'}
                   <ArrowRight
                     className="h-4 w-4 transition-transform group-hover:translate-x-1"
