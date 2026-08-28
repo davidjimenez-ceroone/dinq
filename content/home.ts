@@ -48,7 +48,7 @@ export const toolsSection = {
       tools: [
         { name: 'Amazon Bedrock', slug: 'aws-amazon-bedrock' },
         { name: 'Amazon SageMaker', slug: 'aws-amazon-sagemaker' },
-        { name: 'watsonx.ai' },
+        { name: 'watsonx.ai', slug: 'ibm' },
         { name: 'Microsoft Azure AI Foundry', slug: 'azure' },
         { name: 'Google Vertex AI', slug: 'gcp-vertexai' },
         { name: 'Microsoft 365 Copilot', slug: 'microsoft-365-copilot' },
