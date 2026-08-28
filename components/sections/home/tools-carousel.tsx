@@ -1,7 +1,6 @@
 'use client'
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
-import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { toolsSection, type Tool, type ToolCategory } from '@/content/home'
 import { cn } from '@/lib/utils'
@@ -32,13 +31,12 @@ function ToolRow({ tool }: { tool: Tool }) {
     <li className="flex items-center gap-3">
       {tool.slug ? (
         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-background">
-          <Image
+          <img
             src={logoUrl(tool.slug) || '/placeholder.svg'}
             alt={`Logotipo de ${tool.name}`}
             width={22}
             height={22}
             className="h-[22px] w-[22px] object-contain"
-            unoptimized
           />
         </span>
       ) : (
