@@ -1,10 +1,12 @@
 import { Section, SectionHeading } from '@/components/ui/section'
 import { Reveal } from '@/components/ui/reveal'
+import { NeuralNetworkBackground } from '@/components/brand/neural-network-background'
 import { howWeWork } from '@/content/home'
 
 export function Process() {
   return (
-    <Section className="dinq-diagonal-pattern relative overflow-hidden py-24 sm:py-28 lg:py-32">
+    <Section className="relative overflow-hidden py-24 sm:py-28 lg:py-32">
+      <NeuralNetworkBackground className="pointer-events-auto absolute inset-0 h-full w-full opacity-85" />
       <div className="relative">
         <SectionHeading eyebrow={howWeWork.eyebrow} title={howWeWork.title} />
       <div className="mt-14 grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:items-stretch">
