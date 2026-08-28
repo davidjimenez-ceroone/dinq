@@ -6,8 +6,25 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { toolsSection, type Tool, type ToolCategory } from '@/content/home'
 import { cn } from '@/lib/utils'
 
+const providedLogoUrls: Record<string, string> = {
+  manus: '/logos/manus.png',
+  relevance: '/logos/relevance.png',
+  grok: '/logos/grok.png',
+  otter: '/logos/otter.png',
+  aragon: '/logos/aragon.png',
+  'github-copilot': '/logos/github-copilot.png',
+  colossyan: '/logos/colossyan.png',
+  lindy: '/logos/lindy.png',
+  retell: '/logos/retell.png',
+  midjourney: '/logos/midjourney.png',
+  devin: '/logos/devin.png',
+  plaud: '/logos/plaud.png',
+  heygen: '/logos/heygen.png',
+  synthesia: '/logos/synthesia.png',
+}
+
 function logoUrl(slug: string) {
-  return `https://thesvg.org/icons/${slug}/default.svg`
+  return providedLogoUrls[slug] ?? `https://thesvg.org/icons/${slug}/default.svg`
 }
 
 function ToolRow({ tool }: { tool: Tool }) {

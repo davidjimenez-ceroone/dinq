@@ -77,9 +77,9 @@ export const toolsSection = {
       title: 'Vídeo generativo',
       tools: [
         { name: 'Runway', slug: 'runway' },
-        { name: 'Synthesia' },
-        { name: 'HeyGen' },
-        { name: 'Colossyan' },
+        { name: 'Synthesia', slug: 'synthesia' },
+        { name: 'HeyGen', slug: 'heygen' },
+        { name: 'Colossyan', slug: 'colossyan' },
       ],
     },
     {
@@ -88,7 +88,7 @@ export const toolsSection = {
         { name: 'ElevenLabs', slug: 'elevenlabs' },
         { name: 'Fish Audio', slug: 'fish-audio' },
         { name: 'Suno', slug: 'suno' },
-        { name: 'Retell AI' },
+        { name: 'Retell AI', slug: 'retell' },
       ],
     },
     {
@@ -107,7 +107,7 @@ export const toolsSection = {
       title: 'Agentes autónomos / agentic AI',
       tools: [
         { name: 'Manus', slug: 'manus' },
-        { name: 'Devin' },
+        { name: 'Devin', slug: 'devin' },
         { name: 'Salesforce Agentforce', slug: 'salesforce' },
         { name: 'OpenAI Agents SDK', slug: 'openai' },
         { name: 'n8n', slug: 'n8n' },
@@ -119,8 +119,8 @@ export const toolsSection = {
       title: 'Sistemas agénticos / Orquestación',
       tools: [
         { name: 'VibeTasking' },
-        { name: 'Lindy' },
-        { name: 'Relevance AI' },
+        { name: 'Lindy', slug: 'lindy' },
+        { name: 'Relevance AI', slug: 'relevance' },
         { name: 'Dify AI', slug: 'dify' },
         { name: 'Langflow', slug: 'langflow' },
         { name: 'Flowise' },
@@ -138,11 +138,11 @@ export const toolsSection = {
     {
       title: 'Notetaking / Transcripción + Investigación',
       tools: [
-        { name: 'Plaud' },
-        { name: 'Otter.ai' },
+        { name: 'Plaud', slug: 'plaud' },
+        { name: 'Otter.ai', slug: 'otter' },
         { name: 'Granola', slug: 'granola' },
         { name: 'NotebookLM', slug: 'notebooklm' },
-        { name: 'Aragón' },
+        { name: 'Aragón', slug: 'aragon' },
       ],
     },
   ] satisfies ToolCategory[],
