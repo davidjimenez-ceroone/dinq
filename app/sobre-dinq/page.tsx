@@ -90,20 +90,26 @@ export default function AboutPage() {
       {/* Principles */}
       <Section>
         <SectionHeading eyebrow={principles.eyebrow} title="Los valores que guían cada proyecto" />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {principles.items.map((item, i) => (
-            <Reveal key={item.title} delay={i * 80}>
-              <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-7">
-                <span className="text-lg font-bold text-brand-amber">
+        <div className="mt-14 grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:items-stretch">
+          <div className="grid gap-6 sm:grid-cols-2">
+            {principles.items.map((item, i) => (
+              <Reveal key={item.title} delay={i * 80}>
+                <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-7">
+                  <span className="font-mono text-5xl font-semibold leading-none text-brand-amber">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <h3 className="mt-3 text-lg font-semibold text-brand-dark">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>
-              </div>
-            </Reveal>
-          ))}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <div className="relative min-h-72 overflow-hidden rounded-2xl border border-border bg-card lg:min-h-full">
+            <img src="/principles-analytics.jpg" alt="Profesionales analizando datos en una reunión de trabajo" className="absolute inset-0 h-full w-full object-cover" />
+            <div aria-hidden="true" className="absolute inset-0 bg-brand-dark/20" />
+          </div>
         </div>
       </Section>
 
