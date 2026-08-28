@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { PageHero } from '@/components/layout/page-hero'
+import { NeuralNetworkBackground } from '@/components/brand/neural-network-background'
 import { Reveal } from '@/components/ui/reveal'
 import { CtaButton } from '@/components/brand/cta-button'
 import { ServiceBanner } from '@/components/sections/services/service-banner'
@@ -39,8 +40,10 @@ export default function ServicesPage() {
         breadcrumb={[{ label: 'Inicio', href: routes.home }, { label: 'Servicios' }]}
       />
 
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-        <div className="space-y-10 lg:space-y-14">
+      <div className="relative overflow-hidden bg-background">
+        <NeuralNetworkBackground className="pointer-events-none absolute inset-0 h-full w-full opacity-55" />
+        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+          <div className="space-y-10 lg:space-y-14">
           {serviceDetails.map((service, index) => {
             const Icon = iconMap[service.icon] ?? iconMap.compass
             return (
@@ -74,6 +77,7 @@ export default function ServicesPage() {
               </CtaButton>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </>
