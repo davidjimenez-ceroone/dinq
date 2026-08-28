@@ -4,6 +4,7 @@ import { Section, SectionHeading, Eyebrow } from '@/components/ui/section'
 import { Reveal } from '@/components/ui/reveal'
 import { CtaButton } from '@/components/brand/cta-button'
 import { CurveFlow } from '@/components/brand/curve-flow'
+import { NeuralNetworkBackground } from '@/components/brand/neural-network-background'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { pageSeo, routes, siteConfig } from '@/content/seo'
 import {
@@ -88,7 +89,9 @@ export default function AboutPage() {
       </Section>
 
       {/* Principles */}
-      <Section>
+      <Section className="relative overflow-hidden">
+        <NeuralNetworkBackground className="pointer-events-none absolute inset-0 h-full w-full opacity-65" />
+        <div className="relative">
         <SectionHeading eyebrow={principles.eyebrow} title="Los valores que guían cada proyecto" />
         <div className="mt-14 grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:items-stretch">
           <div className="grid gap-6 sm:grid-cols-2">
@@ -110,6 +113,7 @@ export default function AboutPage() {
             <img src="/principles-analytics.jpg" alt="Profesionales analizando datos en una reunión de trabajo" className="absolute inset-0 h-full w-full object-cover" />
             <div aria-hidden="true" className="absolute inset-0 bg-brand-dark/20" />
           </div>
+        </div>
         </div>
       </Section>
 
